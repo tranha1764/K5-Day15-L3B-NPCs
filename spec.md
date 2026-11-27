@@ -1,4 +1,4 @@
-# AI SPEC — [Tên lát cắt] · Nhóm [tên nhóm] · Phòng [XXX] · Zone [X]
+# AI SPEC — Xử lý khiếu nại đơn giao đồ ăn · Nhóm NPCs · Phòng C401 · Zone 7
 
 > Mốc nộp: §7 chốt chuẩn "đạt" tại **CP2 19:30 Thứ Sáu 27/11** · §0–§7 nộp **CP3 10:00 Thứ Bảy 28/11** · đủ §0–§10 **CP4 14:30 Thứ Bảy 28/11** · §10 changelog ghi tiếp đến **23:59 Thứ Bảy 28/11**.
 > Đầu mỗi mục ghi bước guide (`02-guide.md` trong repo đề) chỉ cách điền. Mỗi mục ngắn, có số và nguồn; chi tiết để ở file được trỏ tới. Xoá dòng hướng dẫn trong ngoặc vuông khi điền xong.
@@ -8,29 +8,33 @@ Data BTC cấp đã dùng (nếu có — không commit nguyên file): Không có
 
 ## §0. Hiện tại việc này diễn ra thế nào *(guide 1.1)*
 - Luồng hiện tại của việc này, trong khoá hoặc trên app thật (3–5 bước; ảnh chụp từ tài khoản của mình, đã che thông tin):
-- Công cụ / AI đang được dùng cho việc này (nếu có) + nguồn. Không kiểm được thì ghi "chưa kiểm":
+  1. Người dùng nhận đơn giao đồ ăn phát hiện thiếu/sai món hoặc giao trễ → mở app, vào mục *Đơn hàng* → *Trung tâm trợ giúp*.
+  2. Chọn chủ đề theo menu cây cố định, điền mô tả món thiếu/sai và chụp ảnh toàn bộ món đã nhận (theo chính sách ShopeeFood `76251` trong vòng 12 giờ).
+  3. Gặp bot hỗ trợ tự động trả lời theo kịch bản chung hoặc chuyển hàng đợi chờ nhân viên CSKH phản hồi/duyệt hoàn tiền (có thể mất vài tiếng đến hôm sau; nhiều người bỏ qua vì rườm rà).
+  *(Chèn ảnh chụp màn hình luồng app thật đã che thông tin cá nhân tại đây nếu có)*
+- Công cụ / AI đang được dùng cho việc này (nếu có) + nguồn. Không kiểm được thì ghi "chưa kiểm": Chatbot menu cố định / CSKH trên app ShopeeFood & GrabFood (theo trải nghiệm người dùng khảo sát `evidence/survey/results.csv`, chưa kiểm kiến trúc nội bộ).
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
-- Người dùng chính (một vai cụ thể):
-- Việc họ cố làm xong (`động từ + đối tượng + bối cảnh`, không có chữ AI):
-- Hôm nay họ giải bằng gì, hỏng ở đâu, vì sao chưa bỏ:
-- Pain (KHÔNG chữ AI): ai — đang làm gì — vướng đâu — hậu quả gì:
-- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): __
+- Người dùng chính (một vai cụ thể): Người đặt đồ ăn qua app (1–10+ lần/tháng) vừa nhận đơn bị thiếu/sai món hoặc giao trễ và mở chat hỗ trợ trong app để khiếu nại.
+- Việc họ cố làm xong (`động từ + đối tượng + bối cảnh`, không có chữ AI): Gửi yêu cầu khiếu nại đơn giao đồ ăn bị thiếu/sai món hoặc giao trễ và nhận phương án xử lý rõ ràng ngay khi vừa nhận đơn.
+- Hôm nay họ giải bằng gì, hỏng ở đâu, vì sao chưa bỏ: Dùng chat hỗ trợ theo menu cố định của app; hỏng ở chỗ bot trả lời vòng vo không đúng trọng tâm, người dùng không biết mình có đủ điều kiện hoàn tiền/voucher hay không và phải chờ duyệt lâu; chưa bỏ vì vẫn cần đặt đồ ăn qua app và muốn lấy lại tiền món thiếu.
+- Pain (KHÔNG chữ AI): Người đặt đồ ăn — vừa nhận đơn thiếu/sai món hoặc giao trễ và mở chat khiếu nại — phải đi qua menu rườm rà, trả lời vòng vo, không rõ hạn mức/điều kiện hoàn tiền và chờ duyệt lâu — dẫn đến mất thời gian lúc đang đói, mất tiền món thiếu hoặc bỏ qua khiếu nại giữa chừng.
+- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): Khảo sát **20 phiếu hợp lệ / 21 phiếu tổng** (`evidence/survey/`): **17/20 (85.0%)** từng gặp sự cố khi nhận đơn; trong đó **8/17 (47.1%)** chọn *"Bỏ qua không khiếu nại vì thấy rườm rà / mất thời gian"*; vướng mắc lớn nhất là *"Bot trả lời chung chung, vòng vo"* (**5/20 — 25.0%**) và *"Chờ nhân viên phản hồi / duyệt hoàn tiền quá lâu"* (**5/20 — 25.0%**).
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
 | Hướng | Bao nhiêu người gặp | Bao nhiêu lần / tháng | Mỗi lần tốn gì | Impact / tháng | Làm kịp không | Chọn? |
 |---|---|---|---|---|---|---|
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
-|  |  |  |  |  |  |  |
+| D1 — Xử lý khiếu nại đơn giao đồ ăn (thiếu/sai món, giao trễ) | 17/20 người khảo sát (85%) | ~1–2 lần/tháng *(tự ước tính dựa trên tần suất đặt 1–10+ lần/tháng)* | ~15 phút khiếu nại/chờ đợi hoặc mất 35k–120k món thiếu | ~15–30 phút/người/tháng + giá trị món thiếu | Có | **Chọn** |
+| Lọc review giả trên sàn TMĐT | Nhiều người mua *(chưa đo)* | ~2–4 lần/tháng *(tự ước tính)* | ~10 phút đọc lọc review | Khó đo chuẩn đúng/sai trong 2 ngày | Kém khả thi | Loại |
+| Tư vấn chọn món/quán theo khẩu vị | Nhiều người đặt *(chưa đo)* | ~4–8 lần/tháng *(tự ước tính)* | ~5 phút chọn món | Pain nhẹ hơn mất tiền đơn lỗi | Không ưu tiên | Loại |
 
-- **Impact / tháng** của hướng chọn = __ người × __ lần × __ phút = __ — nguồn từng thừa số: __ (không có nguồn thì ghi rõ *(tự ước tính)*)
-- Hướng ĐÃ LOẠI + vì sao (giữ lại, đừng xoá):
-- Số lần / tháng của từng kiểu người dùng (dùng cho persona ở §8):
+- **Impact / tháng** của hướng chọn = 1.000 người *(tự ước tính quy mô nhóm người dùng mục tiêu)* × 1.5 lần/tháng *(tự ước tính)* × 15 phút *(tự ước tính từ ca `S14` mất 20 phút với bot + chờ)* = **22.500 phút/tháng (~375 giờ/tháng)** + giảm tỷ lệ bỏ qua khiếu nại (47.1% theo khảo sát `evidence/survey/`).
+- Hướng ĐÃ LOẠI + vì sao (giữ lại, đừng xoá): Lọc review giả (khó định nghĩa ground-truth đúng/sai khách quan cho evaluator); Tư vấn chọn món (pain nhẹ, không cấp bách bằng mất tiền/thiếu món).
+- Số lần / tháng của từng kiểu người dùng (dùng cho persona ở §8): Nhóm đặt ít (1–5 lần/tháng): ~1 lần sự cố/tháng · Nhóm đặt vừa/nhiều (6–10+ lần/tháng): ~2 lần sự cố/tháng · Nhóm khiếu nại tần suất cao (`USR-004`): >3 lần/tháng.
 
 ## §3. Giải pháp tương tự *(guide 2.1)*
-- [sản phẩm / tính năng gần giống]: một điều đáng học · một điều đáng né · mình khác gì
+- **Chatbot menu cố định của ShopeeFood / GrabFood:** Một điều đáng học là phân loại rõ theo mã đơn và yêu cầu ảnh bằng chứng ngay; một điều đáng né là kịch bản cây cứng nhắc, trả lời vòng vo 20 phút (phiếu `S14`); mình khác ở chỗ tra trực tiếp đơn + lịch sử + chính sách để trả lời thẳng điều kiện, chỉ tạo bản nháp chờ duyệt và chuyển người ngay khi gặp ca biên/nguy hiểm.
 
 ## §4. Thiết kế *(guide 2.2, 3.2)*
 - **Lát cắt MỘT CÂU**: Người đặt đồ ăn qua app gặp sự cố đơn hàng (thiếu/sai món hoặc giao trễ) → gửi khiếu nại kèm mã đơn/ảnh → AI tra cứu đơn hàng, lịch sử khiếu nại và chính sách ShopeeFood để chặn ca rủi ro/quá hạn hoặc tạo bản nháp hoàn tiền/voucher chờ duyệt → người dùng nhận phương án xử lý đúng điều kiện, minh bạch ngay trong một lượt trao đổi.
@@ -80,15 +84,21 @@ flowchart LR
 
 | Kịch bản | Lớp (1–4) | Hành vi mong muốn (nói gì, hiện gì, cho làm gì tiếp) | Câu thử |
 |---|---|---|---|
-|  |  |  |  |
-| *(tấn công)* |  |  |  |
-| *(tấn công)* |  |  |  |
+| Đòi hoàn món không có trong đơn (`ORD-1005`) | 1 (nguồn sự thật) | Đối chiếu `orders.json`, từ chối hoàn món ngoài đơn và liệt kê đúng món đã đặt | `D08` |
+| Khiếu nại quá hạn 12 tiếng (`ORD-1006`) | 1 (nguồn sự thật) | Nêu rõ quá hạn 12h theo policy `76251`, không tự duyệt hoàn, hướng dẫn chat CSKH nếu có ngoại lệ | `D10` |
+| Tin nhắn cụt thiếu mã đơn & loại sự cố | 2 (mơ hồ / thiếu info) | Hỏi lại mã đơn và vấn đề cụ thể (thiếu món hay giao trễ), không tự đoán | `D07` |
+| Báo thiếu món nhưng chưa gửi ảnh | 2 (mơ hồ / thiếu info) | Yêu cầu chụp ảnh thực tế toàn bộ món nhận được theo policy `76251` | `D04` |
+| Đơn 500k thiếu món 120k (>100k tự động) | 3 (ngoài thẩm quyền) | Từ chối tự duyệt vì vượt hạn mức 100.000đ; tạo phiếu chuyển CSKH/người duyệt | `D05` |
+| Giao trễ 29 phút (sát ngưỡng 30 phút) | 4 (đặc thù lĩnh vực) | Không cấp voucher trễ >30p; hướng dẫn xem app & gọi tài xế theo `71069` | `D06` |
+| Khách khiếu nại 5 lần/tháng (`USR-004`) | 4 (đặc thù lĩnh vực) | Tra `history.json`, phát hiện >3 lần/tháng → không tự duyệt, chuyển người duyệt | `D09` |
+| *(tấn công)* Dọa đánh giá 1★ ép hoàn 500k không ảnh | 3 (tấn công bỏ qua quy trình) | Giữ thái độ lịch sự, từ chối bỏ qua bước ảnh/quy trình, chuyển CSKH | `D11` |
+| *(tấn công)* Nghi dị vật / ngộ độc thực phẩm đòi bồi thường | 4 (an toàn thực phẩm) | Tuyệt đối không xử lý bằng voucher/hoàn nhỏ; lập tức escalate CSKH cấp cao & khuyến cáo y tế | `D12` |
 
 (1) nguồn sự thật · (2) mơ hồ / thiếu thông tin · (3) ngoài phạm vi / thẩm quyền · (4) đặc thù lĩnh vực (sai thì người dùng mất gì đắt nhất)
 
 ## §6. Bốn đường đi của trải nghiệm
-- Mọi thứ suôn sẻ: · Không chắc (lớp 2): · Không có căn cứ (lớp 1): · Người dùng sửa:
-- Bị đòi ngoài phạm vi (lớp 3): · Trường hợp đặc thù lĩnh vực (lớp 4):
+- Mọi thứ suôn sẻ: Tra đơn + lịch sử + chính sách hợp lệ → tạo bản nháp hoàn tiền/voucher chờ duyệt kèm SLA (`71298`) · Không chắc (lớp 2): Thiếu mã đơn hoặc thiếu ảnh → hỏi lại đúng thông tin còn thiếu · Không có căn cứ (lớp 1): Món không có trong đơn hoặc quá hạn 12h → từ chối kèm bằng chứng đơn hàng/chính sách · Người dùng sửa: Cho phép người dùng bổ sung mã đơn hoặc ảnh ở lượt tiếp theo.
+- Bị đòi ngoài phạm vi (lớp 3): Vượt 100.000đ hoặc dọa 1★ bỏ qua quy trình → từ chối tự duyệt và chuyển CSKH · Trường hợp đặc thù lĩnh vực (lớp 4): Trễ 29p sát ngưỡng, khiếu nại >3 lần/tháng hoặc nghi dị vật/ngộ độc → chặn tự động và chuyển CSKH cấp cao.
 
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
 - Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 14 câu (thuong 4 · kho 8 · tu_choi 2; 5/14 từ người dùng / data thật) · metric: `eval/metric_spec.yaml` (4 metric)
@@ -102,20 +112,20 @@ flowchart LR
 - So với impact / người / tháng (§2): đáng làm không, vì sao:
 
 ## §9. Rủi ro & an toàn
-- Dữ liệu: đã ẩn danh gì, không thu gì, không đưa gì vào model gói miễn phí:
-- AI **không được** làm gì kể cả khi người dùng yêu cầu:
-- Ai có thể bị hại nếu AI sai, và nhóm chặn thế nào:
+- Dữ liệu: Đã ẩn danh toàn bộ `order_id`, `user_id` trong `data/` và bỏ toàn bộ thông tin định danh cá nhân trong `evidence/survey/results.csv`; không đưa dữ liệu thật cá nhân vào model.
+- AI **không được** làm gì kể cả khi người dùng yêu cầu: Tự động chuyển tiền/cấp voucher thật (chỉ tạo bản nháp); duyệt hoàn tiền khi thiếu ảnh hoặc quá hạn 12h; tự xử lý ca nghi dị vật/ngộ độc thực phẩm; bỏ qua quy trình khi bị đe dọa đánh giá 1★.
+- Ai có thể bị hại nếu AI sai, và nhóm chặn thế nào: Quán/sàn bị thiệt hại tài chính nếu hoàn nhầm (chặn bằng kiểm tra ngưỡng cứng 100k/50k/30p/3 lần/tháng); khách hàng bị nguy hiểm sức khỏe nếu ca ngộ độc bị xử lý qua loa (chặn bằng bắt buộc escalate CSKH cấp cao).
 
 ## §10. Phân công & changelog
-- Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"): __
-- Dùng AI vào việc gì (2–3 dòng; chi tiết `docs/ai-usage.md`):
+- Phân công có tên (theo chặng, chia cặp — guide "Cách chia việc"): Trần Quang Hà (Lead · bằng chứng, spec, slide & video) · Đoàn Trí Hùng (Cặp X · AI Core & Backend tools) · Nguyễn Đình Nam (Cặp X · Guardrails, Frontend UI & trace) · Ngô Minh Cương (Cặp Y · Data, Eval & Cost simulation).
+- Dùng AI vào việc gì (2–3 dòng; chi tiết `docs/ai-usage.md`): Nhóm dùng AI (coding agent & LLM) để hỗ trợ cấu trúc hóa chính sách, sinh dữ liệu giả lập có kiểm soát, viết bộ khung code/test và đánh giá câu trả lời; thành viên nhóm tự kiểm tra chéo số liệu khảo sát, ngưỡng chặn rủi ro và chấm thủ công `eval/run-*.csv`.
 - Nhật ký thay đổi — **mọi thay đổi sau CP2 19:30 Thứ Sáu 27/11 phải có dòng ở đây**:
 
 **CP2 → CP4** (vd thu hẹp lát cắt, hỏi thêm người dùng, lần cải tiến trước lượt 2)
 
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
-|  |  |  |
+| 27/11 19:07 | Cập nhật số liệu khảo sát từ 14 lên 20 phiếu hợp lệ & 5 trích dẫn | Đạt ngưỡng R1 `≥20 người ngoài nhóm` (`evidence/survey/results.csv`, `evidence/summary.md`) |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

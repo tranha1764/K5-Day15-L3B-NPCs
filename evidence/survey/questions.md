@@ -1,8 +1,8 @@
 # Khảo sát — Bộ câu hỏi & Nhật ký thu thập (Đề tài D1)
 
 - **Bảng kết quả (Google Sheets):** https://docs.google.com/spreadsheets/d/17fMrO6JV9RDnl_zvX7V_1sKWNVdwvJf35EKdRo4avjA/edit?gid=1554517919
-- **Thời gian mở:** 27/11/2026 17:26 · **Lần trích xuất gần nhất:** 27/11/2026 18:12 (đang tiếp tục thu thập để đạt ≥20 người trước CP3).
-- **Tổng số phản hồi:** 15 phiếu (trong đó 14 phiếu hợp lệ, 1 phiếu nhiễu/spam `S04` ghi `"skibidi toilet"` và chọn mâu thuẫn).
+- **Thời gian mở:** 27/11/2026 17:26 · **Lần trích xuất gần nhất:** 27/11/2026 19:06 (đã đạt ngưỡng ≥20 người hợp lệ).
+- **Tổng số phản hồi:** 21 phiếu (trong đó 20 phiếu hợp lệ, 1 phiếu nhiễu/spam `S04` ghi `"skibidi toilet"` và chọn mâu thuẫn).
 
 ## Bộ câu hỏi
 
