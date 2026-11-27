@@ -1,11 +1,20 @@
-> Đây là khung repo nộp bài. Điền mọi chỗ `____`, giữ nguyên tên các mục. **Mục 0 xoá đi sau khi tạo repo xong.**
-> Giờ, mốc, luật, rubric: xem `README.md`, `02-guide.md`, `03-rubric.md` trong repo đề (bộ đề BTC phát).
-
-# NPCs — [Tên lát cắt]
+# NPCs — Xử lý khiếu nại đơn giao đồ ăn (Track D · D1)
 
 **Thành viên, lớp, track:** xem [TEAMS.md](TEAMS.md). **Điền TEAMS.md đúng format**: khi chấm và đánh giá, BTC quét file này để ghép điểm cho từng người.
 
 *Lát cắt = phần nhỏ nhất làm xong được trong hackathon: một người dùng · một việc · một quyết định AI · một kết quả.*
+
+## Tóm tắt bài của nhóm
+
+| | |
+|---|---|
+| **Người dùng** | Người đặt đồ ăn qua app (ShopeeFood, GrabFood…) vừa nhận đơn thiếu / sai món hoặc giao trễ và khiếu nại trong chat hỗ trợ |
+| **Pain** | Bot trả lời chung chung, vòng vo; chờ nhân viên lâu; không rõ mình có đủ điều kiện được hoàn — nhiều người bỏ qua không khiếu nại, mất tiền món lỗi |
+| **Bằng chứng đầu** | Khảo sát (đang thu, 13 người dùng): **11/13** từng gặp sự cố · **7/11** khiếu nại mất công (5/11 bỏ qua vì rườm rà). Chi tiết: [evidence/summary.md](evidence/summary.md) |
+| **Lát cắt** | Khách gửi khiếu nại kèm mã đơn / ảnh → AI tra đơn, lịch sử khiếu nại, chính sách ShopeeFood → tạo **bản nháp** hoàn tiền / voucher chờ duyệt, hỏi lại khi thiếu thông tin, hoặc chuyển nhân viên khi quá hạn / vượt ngưỡng / rủi ro |
+| **Mức tự động** | AI gợi ý, người quyết — AI không tự chuyển tiền hay phát voucher thật |
+| **Chuẩn "đạt"** (chốt CP2) | ≥ 80% câu thử đạt **và** 100% ca rủi ro cao không tự duyệt hoàn tiền / voucher sai quy trình — [spec.md §7](spec.md) |
+| **File chính** | [canvas.md](canvas.md) · [spec.md](spec.md) · [eval/benchmark.csv](eval/benchmark.csv) · [eval/metric_spec.yaml](eval/metric_spec.yaml) · [data/DATA_CARD.md](data/DATA_CARD.md) |
 
 ---
 
@@ -84,14 +93,20 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Thật** (bắt buộc từ CP3) | Model: ____ |
-|  |  |  |
+| Lời gọi AI ở quyết định trung tâm | **Giả** đến CP3 → **Thật** (bắt buộc từ CP3) | Model: ____ *(chưa chọn — `codebase/ai.py` đang chạy chế độ giả, token 0)* |
+| Chính sách xử lý khiếu nại (`data/policies.json`) | **Thật** | Trang trợ giúp công khai ShopeeFood: 76251 (thiếu / sai món), 71069 (giao trễ), 71298 (hoàn tiền), kiểm 27/11/2026 |
+| Ngưỡng tự động (100.000đ · trễ 30 phút · 3 lần khiếu nại / tháng) | **Giả lập** | Sàn không công khai hạn mức tự động; nhóm tự đặt theo đề D1 |
+| Đơn hàng, lịch sử khiếu nại (`data/orders.json`, `data/history.json`) | **Giả lập** | Cấu trúc theo dataset công khai `mindweave/food-delivery-orders`, không có dữ liệu cá nhân thật |
+| Công cụ trong `codebase/tools.py` | **Giả** (còn công cụ mẫu của khung) | Sẽ thay bằng `lookup_order`, `lookup_user_history`, `lookup_policy`, `create_resolution_draft` như `spec.md` §4 |
+| Hoàn tiền / voucher / chuyển CSKH | **Chỉ bản nháp** | Không gửi, không chuyển tiền thật; người duyệt quyết |
 
 ## Dùng AI vào việc gì
 
 2–3 dòng (bắt buộc): nhóm dùng công cụ AI nào để làm gì, người kiểm lại phần nào. Chi tiết: [docs/ai-usage.md](docs/ai-usage.md). Coding agent đọc [AGENTS.md](AGENTS.md).
 
-____
+- **Claude Code (coding agent):** soạn nháp canvas, giả thuyết, bộ câu hỏi khảo sát và script tạo Google Form (`evidence/survey/create_form.gs`), sơ đồ kiến trúc, rà soát đủ / thiếu từng checkpoint và đếm lại số khảo sát theo cách đếm đã ghi.
+- **Người kiểm lại:** nhóm duyệt ngưỡng giả thuyết, phân công, số liệu và câu thử trước khi commit. Câu trả lời khảo sát và trích dẫn là của người thật, không do AI tạo.
+- *(Thành viên dùng thêm công cụ AI khác — ghi bổ sung ở đây và trong `docs/ai-usage.md`.)*
 
 ## File mẫu — điền ở bước nào
 
