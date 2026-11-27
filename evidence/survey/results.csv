@@ -1,0 +1,8 @@
+response_id,timestamp,tan_suat_dat_hang,su_co_da_gap,thoi_gian_xu_ly,buoc_kho_chiu_nhat,chi_tiet_khieu_nai,hop_le
+S01,27/11/2026 17:26:16,"1 – 5 lần","Giao thiếu món, Giao sai món","Chờ vài tiếng đến hôm sau","Chờ nhân viên phản hồi / duyệt hoàn tiền quá lâu","",1
+S02,27/11/2026 17:30:02,"6 – 10 lần","Giao thiếu món, Giao sai món","Bỏ qua không khiếu nại vì thấy rườm rà / mất thời gian","Bot trả lời chung chung, vòng vo không đúng vấn đề","",1
+S03,27/11/2026 17:32:20,"1 – 5 lần","Giao sai món","Giải quyết ngay trong vòng 5 – 10 phút","Chờ nhân viên phản hồi / duyệt hoàn tiền quá lâu","món không đúng mô tả nhắn không liên hệ được quán.",1
+S04,27/11/2026 17:38:04,"Trên 10 lần","Giao thiếu món, Giao sai món, Giao trễ nhiều (trên 30 phút), Chưa từng gặp, skibidi","Chờ vài tiếng đến hôm sau","Bot trả lời chung chung, vòng vo không đúng vấn đề","skibidi toilet",0
+S05,27/11/2026 17:38:44,"6 – 10 lần","Giao thiếu món","Bỏ qua không khiếu nại vì thấy rườm rà / mất thời gian","Phải tìm lại hóa đơn giấy, chụp nhiều ảnh bằng chứng","",1
+S06,27/11/2026 17:41:22,"6 – 10 lần","Giao thiếu món, Giao sai món","Bỏ qua không khiếu nại vì thấy rườm rà / mất thời gian","Không rõ mình có đủ điều kiện được hoàn tiền/voucher hay không","Quán giao sai món và thiếu món nhưng mà quán không xử lý và không được hoàn tiền",1
+S07,27/11/2026 17:44:08,"Trên 10 lần","Chưa từng gặp","Chưa từng khiếu nại","Bot trả lời chung chung, vòng vo không đúng vấn đề","Không",1

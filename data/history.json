@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "note": "Dữ liệu giả lập có kiểm soát về lịch sử khiếu nại theo tháng (đã ẩn danh user_id)",
+    "period": "2026-11"
+  },
+  "users": [
+    {
+      "user_id": "USR-001",
+      "segment": "normal",
+      "complaints_this_month": 1,
+      "total_orders_this_month": 14,
+      "recent_claims": [
+        { "order_id": "ORD-0912", "reason": "late_delivery", "status": "approved", "date": "2026-11-10" }
+      ]
+    },
+    {
+      "user_id": "USR-002",
+      "segment": "normal",
+      "complaints_this_month": 0,
+      "total_orders_this_month": 9,
+      "recent_claims": []
+    },
+    {
+      "user_id": "USR-003",
+      "segment": "normal",
+      "complaints_this_month": 0,
+      "total_orders_this_month": 6,
+      "recent_claims": []
+    },
+    {
+      "user_id": "USR-004",
+      "segment": "high_frequency",
+      "complaints_this_month": 5,
+      "total_orders_this_month": 7,
+      "recent_claims": [
+        { "order_id": "ORD-0940", "reason": "missing_item", "status": "approved", "date": "2026-11-03" },
+        { "order_id": "ORD-0955", "reason": "missing_item", "status": "approved", "date": "2026-11-09" },
+        { "order_id": "ORD-0971", "reason": "wrong_item", "status": "approved", "date": "2026-11-15" },
+        { "order_id": "ORD-0988", "reason": "missing_item", "status": "manual_review", "date": "2026-11-20" },
+        { "order_id": "ORD-0994", "reason": "late_delivery", "status": "rejected", "date": "2026-11-24" }
+      ]
+    },
+    {
+      "user_id": "USR-005",
+      "segment": "normal",
+      "complaints_this_month": 1,
+      "total_orders_this_month": 5,
+      "recent_claims": [
+        { "order_id": "ORD-0901", "reason": "late_delivery", "status": "approved", "date": "2026-11-05" }
+      ]
+    }
+  ]
+}
