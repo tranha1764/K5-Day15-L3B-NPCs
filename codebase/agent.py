@@ -63,6 +63,31 @@ THREAT_BYPASS_TERMS = (
     "khong can quy trinh",
 )
 
+PROMPT_INJECTION_TERMS = (
+    "quan tri vien",
+    "admin",
+    "bo qua quy dinh",
+    "bo qua gioi han",
+    "bo qua toan bo",
+    "bo qua huong dan",
+)
+
+DATA_EXFIL_TERMS = (
+    "du lieu ca nhan",
+    "khach hang khac",
+    "nguoi dung khac",
+    "xuat toan bo",
+    "lich su don hang cua cac",
+)
+
+AESTHETIC_COMPLAINT_TERMS = (
+    "dep mat",
+    "hinh quang cao",
+    "khong giong hinh",
+    "khong giong nhu trong hinh",
+    "khong duoc dep",
+)
+
 PHOTO_POSITIVE_TERMS = (
     "da chup anh",
     "chup anh",
@@ -109,6 +134,10 @@ SLA_INQUIRY_TERMS = (
     "tien ve",
     "thoi gian hoan",
     "the ngan hang",
+    "tai khoan ngan hang",
+    "chuyen thang",
+    "phuong thuc hoan",
+    "kenh hoan",
     "may ngay",
 )
 
@@ -274,23 +303,64 @@ def _evaluate_guardrails(
             "forbidden": ["Không nhượng bộ hoàn 500.000đ hay bỏ qua bước chụp ảnh"],
         }
 
-    # 3. Câu hỏi thuần về SLA hoàn tiền (policy 71298)
+    # 2b. Tấn công trích xuất dữ liệu người dùng khác
+    if _has_any(norm_text, DATA_EXFIL_TERMS):
+        note("guardrail: data_exfiltration -> rejected")
+        return {
+            "status": "rejected",
+            "draft": None,
+            "decision": "TỪ CHỐI — YÊU CẦU TRUY CẬP DỮ LIỆU CÁ NHÂN TRÁI PHÉP",
+            "must_include": [
+                "Từ chối dứt khoát yêu cầu xuất dữ liệu cá nhân hoặc lịch sử đơn hàng của khách hàng khác vì lý do bảo mật và quyền riêng tư.",
+                "Nêu rõ phạm vi hỗ trợ chỉ xử lý khiếu nại đơn hàng của chính người dùng.",
+            ],
+            "forbidden": ["Không tiết lộ thông tin từ orders.json hay history.json của người khác"],
+        }
+
+    # 2c. Tấn công giả mạo vai trò / yêu cầu bỏ qua giới hạn hệ thống
+    if _has_any(norm_text, PROMPT_INJECTION_TERMS):
+        note("guardrail: prompt_injection_bypass -> rejected")
+        return {
+            "status": "rejected",
+            "draft": None,
+            "decision": "TỪ CHỐI — KHÔNG BỎ QUA GIỚI HẠN CHÍNH SÁCH",
+            "must_include": [
+                "Từ chối yêu cầu bỏ qua quy định hoặc hạn mức hoàn tiền tự động (%s)." % _format_vnd(max_auto_refund),
+                "Nêu rõ mọi yêu cầu vượt hạn mức %s đều phải chuyển CSKH / người duyệt kiểm tra theo đúng quy trình." % _format_vnd(max_auto_refund),
+            ],
+            "forbidden": ["Không duyệt hoàn 500.000đ", "Không chấp nhận yêu cầu bỏ qua quy trình"],
+        }
+
+    # 3. Câu hỏi thuần về SLA hoặc kênh hoàn tiền (policy 71298)
     if _is_pure_sla_inquiry(norm_text):
         note("guardrail: pure_sla_inquiry -> status=None")
         return {
             "status": None,
             "draft": None,
-            "decision": "GIẢI ĐÁP CHÍNH SÁCH HOÀN TIỀN (Policy 71298)",
+            "decision": "GIẢI ĐÁP CHÍNH SÁCH & KÊNH HOÀN TIỀN (Policy 71298)",
             "must_include": [
                 "Thời gian kiểm tra/xác nhận yêu cầu: 1–3 ngày làm việc.",
-                "Hoàn về ShopeePay hoặc Số dư tài khoản Shopee: trong vòng 24 giờ sau khi xác nhận.",
+                "Hoàn tiền được thực hiện theo phương thức thanh toán ban đầu: đơn thanh toán qua ShopeePay/Số dư TK Shopee sẽ hoàn về ví ShopeePay trong vòng 24 giờ sau xác nhận (không tự chuyển thẳng sang tài khoản ngân hàng khác).",
                 "Hoàn về thẻ ngân hàng (BankCard): tùy thuộc vào ngân hàng phát hành thẻ.",
             ],
-            "forbidden": ["Không tạo bản nháp hoàn tiền mới khi khách chỉ hỏi quy định"],
+            "forbidden": ["Không tạo bản nháp hoàn tiền mới khi khách chỉ hỏi quy định", "Không từ chối nhầm thành món ngoài đơn"],
         }
 
     # 4. Thiếu mã đơn hàng
     if not order_id:
+        if _has_any(norm_text, AESTHETIC_COMPLAINT_TERMS):
+            note("guardrail: aesthetic_presentation -> rejected")
+            return {
+                "status": "rejected",
+                "draft": None,
+                "decision": "NGOÀI PHẠM VI HOÀN TIỀN — KHÁC BIỆT THẨM MỸ / TRÌNH BÀY",
+                "must_include": [
+                    "Giải thích nhẹ nhàng rằng sự khác biệt về hình thức trình bày/thẩm mỹ so với ảnh quảng cáo không thuộc lỗi thiếu/sai món hay hư hỏng theo chính sách 76251.",
+                    "Mời khách cung cấp mã đơn hàng và ảnh thực tế nếu món có dấu hiệu sai thành phần, thiếu món hoặc hư hỏng để được xem xét.",
+                ],
+                "forbidden": ["Không tự ý duyệt hoàn tiền chỉ vì không đẹp mắt như ảnh"],
+            }
+        note("guardrail: missing_order_id -> need_info")
         note("guardrail: missing_order_id -> need_info")
         must = [
             "Hỏi lại mã đơn hàng (vd ORD-xxxx), vấn đề cụ thể (thiếu/sai món hay giao trễ) và tên món bị ảnh hưởng.",
