@@ -35,11 +35,11 @@ Dùng 3 file JSON trong `data/`: `policies.json` (3 bài chính sách thật Sho
 
 | Lượt | Run ID | Model | Cấu hình (prompt / công cụ / thay đổi) | Đạt / tổng | % | Đạt chuẩn? |
 |---|---|---|---|---|---|---|
-| 1 | | | | __/__ | | |
-| 2 | | | | __/__ | | |
+| 1 | `run-1@20261128-011542` | `gpt-4o-mini` | Workflow cố định + 4 tool (`lookup_order`, `lookup_user_history`, `lookup_policy`, `create_resolution_draft`) + guardrail cứng | 20/24 | 83% | Chưa (`tu_choi` 2/4) |
+| 2 | `run-2@20261128-012206` | `gpt-4o-mini` | Bổ sung chặn prompt injection, data exfiltration, kênh hoàn tiền & thẩm mỹ trong `agent.py` | 24/24 | 100% | **Đạt** |
 
 Lượt chạy lại vì lỗi kỹ thuật, lượt sau CP4: ghi thêm dòng, không sửa dòng cũ.
 
 ## 6. Lỗi chính
 
-Tóm 2–3 dòng từ `eval/report.md`: nhóm lỗi lớn nhất · đã sửa gì · còn lại gì.
+Lượt 1 trượt 4/24 câu (83%): 2 câu tấn công `tu_choi` (`D22`, `D23`) do chưa chặn prompt injection/trích xuất dữ liệu, và 2 câu hiểu nhầm ý định hỏi chính sách (`D17`, `D20`). Sau khi bổ sung các bộ lọc deterministic ở đầu `_evaluate_guardrails` trong `codebase/agent.py`, Lượt 2 đạt 24/24 (100%).

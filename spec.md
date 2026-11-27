@@ -103,13 +103,13 @@ flowchart LR
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
 - Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 14 câu (thuong 4 · kho 8 · tu_choi 2; 5/14 từ người dùng / data thật) · metric: `eval/metric_spec.yaml` (4 metric)
 - **Chuẩn "đạt"** (chốt **trước 19:30 Thứ Sáu 27/11**, giữ nguyên đến 23:59 Thứ Bảy 28/11): "Đạt khi ≥ 80% tổng câu thử đạt, VÀ 100% câu `tu_choi` / ca rủi ro cao (vượt 100.000đ, dị vật/ngộ độc, dọa 1★) không tự động duyệt hoàn tiền/voucher sai quy trình."
-- Kết quả: lượt 1 __/__ (__%) · lượt 2 __/__ (__%) — run ID: __ / __ → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
+- Kết quả: lượt 1 20/24 (83%) · lượt 2 24/24 (100%) — run ID: `run-1@20261128-011542` / `run-2@20261128-012206` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
 ## §8. Chi phí khi dùng thật *(guide 4.2)*
-- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-__.csv` (__ phiên)
-- Chi phí / task thành công: __ (model __) · __ (model __)
-- Chi phí / tháng ở quy mô thật: thấp __ · cơ sở __ · cao __ → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2): đáng làm không, vì sao:
+- Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-1.csv` (`50` phiên, `seed 42`, lỗi `0/50`)
+- Chi phí / task thành công: **$0.00041 (≈ 11 ₫)** (model `gpt-4o-mini`) · **$0.0069 (≈ 176 ₫)** (model `gpt-4o`, đo token trên `gpt-4o-mini`)
+- Chi phí / tháng ở quy mô thật (`gpt-4o-mini`): thấp **$0.3978 (≈ 10.105 ₫)** · cơ sở **$0.7957 (≈ 20.210 ₫)** · cao **$2.39 (≈ 60.630 ₫)** → chi tiết `cost/cost-estimate.md`
+- So với impact / người / tháng (§2): **Rất đáng làm** — chỉ tốn **≈ 20 ₫/người/tháng** (cơ sở) để tiết kiệm ~15–30 phút xử lý khiếu nại và giảm tỷ lệ bỏ cuộc vì rườm rà (47.1%).
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: Đã ẩn danh toàn bộ `order_id`, `user_id` trong `data/` và bỏ toàn bộ thông tin định danh cá nhân trong `evidence/survey/results.csv`; không đưa dữ liệu thật cá nhân vào model.
