@@ -1,8 +1,8 @@
 # ADR 0001: Kiến trúc 1-call LLM + Guardrail cứng bằng code cho xử lý khiếu nại D1
 
-- **Ngày:** 27/11/2026
+- **Ngày:** 27/11/2026 *(cập nhật v2: 28/11/2026 sau `eval/run-2.csv` 24/24)*
 - **Trạng thái:** Accepted
-- **Phạm vi:** `codebase/ai.py`, `codebase/tools.py`, `codebase/agent.py` (Task `AI-01`)
+- **Phạm vi:** `codebase/ai.py`, `codebase/tools.py`, `codebase/agent.py` (Task `AI-01` & `AI-02`)
 
 ## 1. Bối cảnh (Context)
 
@@ -25,7 +25,10 @@ Thay vì dùng vòng lặp agent tự do hoặc gọi 2 lần LLM (Extract + Gen
 |---|---|---|---|
 | 1 | Dị vật / ngộ độc thực phẩm | `escalated` | `action="escalate"`, `amount_vnd=0` |
 | 2 | Đe dọa 1★ / ép bỏ qua quy trình ảnh | `escalated` | `action="escalate"`, `amount_vnd=0` |
-| 3 | Hỏi thông tin chính sách thuần túy (vd SLA `71298`) | `None` | `None` |
+| 2b | *(v2)* Tấn công trích xuất dữ liệu khách hàng khác (`DATA_EXFIL_TERMS`) | `rejected` | `None` |
+| 2c | *(v2)* Prompt injection / giả mạo admin đòi bỏ qua hạn mức (`PROMPT_INJECTION_TERMS`) | `rejected` | `None` |
+| 3 | Hỏi thông tin SLA hoặc kênh hoàn tiền thuần túy (`policy 71298`) | `None` | `None` |
+| 4a | *(v2)* Thiếu `order_id` + khiếu nại khác biệt thẩm mỹ / hình quảng cáo (`AESTHETIC_COMPLAINT_TERMS`) | `rejected` | `None` |
 | 4 | Thiếu `order_id` hoặc không tìm thấy đơn | `need_info` | `None` |
 | 5 | Quá hạn 12h (`policy 76251`) cho khiếu nại thiếu/sai món | `rejected` | `None` |
 | 6 | Khiếu nại món không có trong `order.items` | `rejected` | `None` |
