@@ -1,4 +1,4 @@
-# Canvas — [tên nhóm] · Track [A–F]
+# Canvas — NPCs · Track D
 
 > Điền ở guide bước 1.4. CP1 17:00 Thứ Sáu 27/11: nộp bản đầu, đủ 7 dòng (dòng 4 được ghi giả thuyết + nguồn sẽ kiểm).
 > CP2 19:30 Thứ Sáu 27/11: cập nhật (số bằng chứng đầu, lát cắt đã chốt) và điền dòng "Đã đổi gì so với CP1".
@@ -6,11 +6,11 @@
 
 | # | Dòng | Nhóm điền |
 |---|---|---|
-| 1 | Track + lát cắt dự kiến | |
-| 2 | Người dùng chính (một vai cụ thể — không phải "học viên nói chung") | |
-| 3 | Pain một câu: ai — đang làm gì — vướng đâu — hậu quả | |
-| 4 | Bằng chứng đầu — CP1: giả thuyết + nguồn sẽ kiểm · CP2: số đầu tiên + 1 trích dẫn | |
-| 5 | **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả) | |
-| 6 | AI tự làm đến đâu + 1 dòng lý do: sai thì ai chịu gì | |
-| 7 | Phân công có tên | |
+| 1 | Track + lát cắt dự kiến | Track D · hướng D1 Xử lý khiếu nại đơn giao đồ ăn. Lát cắt dự kiến: khách báo đơn giao đồ ăn bị thiếu món trong chat hỗ trợ của app, nhận ngay phương án trong hạn mức chính sách hoặc được chuyển nhân viên |
+| 2 | Người dùng chính (một vai cụ thể — không phải "học viên nói chung") | Người đặt đồ ăn qua app giao đồ ăn (đặt vài lần mỗi tháng), vừa nhận một đơn bị thiếu hoặc sai món và mở chat hỗ trợ trong app để khiếu nại |
+| 3 | Pain một câu: ai — đang làm gì — vướng đâu — hậu quả | Người đặt đồ ăn — vừa nhận đơn thiếu món và khiếu nại trong app — trợ lý chat chạy theo menu cố định, phải qua nhiều bước chọn, chờ nhân viên lâu, không biết mình được hoàn bao nhiêu hay vì sao bị từ chối — mất thời gian lúc đang đói, mất tiền món thiếu hoặc bỏ cuộc giữa chừng, mất niềm tin vào app *(giả thuyết, chưa kiểm)* |
+| 4 | Bằng chứng đầu — CP1: giả thuyết + nguồn sẽ kiểm · CP2: số đầu tiên + 1 trích dẫn | **Giả thuyết:** người đặt đồ ăn gặp đơn thiếu hoặc sai món không hiếm, và quá trình khiếu nại trong app làm nhiều người bỏ cuộc hoặc không hài lòng với kết quả. **Mình đúng nếu thấy:** ≥2/3 người phỏng vấn kể được một lần đơn có sự cố và khiếu nại thấy mất công hoặc kết quả không rõ, trong 1 tháng qua · ≥40% người khảo sát từng gặp đơn thiếu / sai món trong 3 tháng qua, và trong số đó ≥50% bỏ cuộc giữa chừng hoặc không hài lòng với kết quả · trong N review mới nhất của các app giao đồ ăn trên Google Play, ≥15% nhắc tới khiếu nại hoặc hoàn tiền *(ngưỡng tự đặt)*. **Nguồn sẽ kiểm:** nguồn chính là đào review công khai trên Google Play của các app giao đồ ăn, ghi trước cách chọn mẫu, đếm x/N (`evidence/data-mining.md`) · nguồn kiểm lại là khảo sát ≥20 học viên trong khoá (`evidence/survey/`) và phỏng vấn ≥3 người ngoài nhóm về lần khiếu nại gần nhất (`evidence/interviews/`) |
+| 5 | **Lát cắt MỘT CÂU** (1 người dùng · 1 việc · 1 quyết định AI · 1 kết quả) | Một người đặt đồ ăn báo trong chat hỗ trợ rằng đơn vừa nhận bị thiếu một món; AI tra đơn và bảng chính sách để quyết định đề xuất hoàn phần thiếu trong hạn mức, hỏi lại một câu khi thiếu thông tin, hay chuyển nhân viên khi vượt hạn mức hoặc có dấu hiệu bất thường; khách nhận ngay phương án cụ thể kèm lý do, hoặc biết rõ đã được chuyển người |
+| 6 | AI tự làm đến đâu + 1 dòng lý do: sai thì ai chịu gì | **AI tự làm khi chắc, chuyển người khi không.** AI tự trả lời, hỏi lại và chuyển nhân viên; hạn mức bồi thường kiểm bằng code (`check_limit`), không để model tự cộng tiền. Hoàn tiền thật (`issue_refund`, khó đảo) chỉ tạo bản nháp chờ nhân viên duyệt; AI không tự đóng khiếu nại. Lý do: hoàn quá tay thì quán mất tiền, từ chối sai thì khách mất tiền và niềm tin, và tiền đã hoàn thì không rút lại được |
+| 7 | Phân công có tên | *(đề xuất, nhóm sửa sau)* Cả nhóm: mỗi người tự hỏi ≥1 người đặt đồ ăn ngoài nhóm và gửi khảo sát, tổng hợp chung. Trần Quang Hà (đội trưởng): nộp checkpoint, giữ mạch Pain → Impact (`spec.md` §1–§2), đào review Google Play. Đoàn Trí Hùng + Nguyễn Đình Nam (cặp X): khung bản chạy thử, công cụ tra đơn / chính sách, kiểm hạn mức bằng code, nối model (`codebase/`). Ngô Minh Cương + Trần Quang Hà (cặp Y): data giả (đơn, bảng chính sách), data card, bộ câu thử, metric spec, mô phỏng chi phí (`data/`, `eval/`, `cost/`). Đổi cặp sau CP3 theo guide |
 | — | *(CP2)* Đã đổi gì so với CP1 | |

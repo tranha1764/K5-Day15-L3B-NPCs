@@ -6,15 +6,15 @@
 
 - Tên nhóm: NPCs
 - Lớp: L3B
-- Track: A
+- Track: D
 - Link repo: https://github.com/tranha1764/K5-Day15-L3B-NPCs
 
 | STT | Họ và tên | Mã học viên | Vai trò | Phần việc chính |
 |---|---|---|---|---|
-| 1 | Trần Quang Hà | 2A202603962 | Đội trưởng | Chưa phân công (cập nhật sau) |
-| 2 | Đoàn Trí Hùng | 2A202603959 | Thành viên | Chưa phân công (cập nhật sau) |
-| 3 | Ngô Minh Cương | 2A202603954 | Thành viên | Chưa phân công (cập nhật sau) |
-| 4 | Nguyễn Đình Nam | 2A202603797 | Thành viên | Chưa phân công (cập nhật sau) |
+| 1 | Trần Quang Hà | 2A202603962 | Đội trưởng | Nộp checkpoint · pain → impact (spec §1–§2), đào review · cặp Y: câu thử, metric |
+| 2 | Đoàn Trí Hùng | 2A202603959 | Thành viên | Cặp X: khung bản chạy thử, công cụ tra đơn / chính sách, nối model (codebase/) |
+| 3 | Ngô Minh Cương | 2A202603954 | Thành viên | Cặp Y: data giả, data card, bộ câu thử, mô phỏng chi phí (data/, eval/, cost/) |
+| 4 | Nguyễn Đình Nam | 2A202603797 | Thành viên | Cặp X: kiểm hạn mức bằng code, chặn rủi ro, trace (codebase/) |
 
 **Quy tắc điền**
 - **Lớp:** `L3A` hoặc `L3B`. **Track:** một chữ `A` (EdTech), `B` (Y tế), `C` (Du lịch), `D` (Thương mại điện tử), `E` (Tài chính) hoặc `F` (Làn khác). **Link repo:** link GitHub công khai của nhóm.
