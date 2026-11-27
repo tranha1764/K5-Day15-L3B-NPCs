@@ -11,7 +11,7 @@ Data BTC cấp đã dùng (nếu có — không commit nguyên file): Không có
   1. Người dùng nhận đơn giao đồ ăn phát hiện thiếu/sai món hoặc giao trễ → mở app, vào mục *Đơn hàng* → *Trung tâm trợ giúp*.
   2. Chọn chủ đề theo menu cây cố định, điền mô tả món thiếu/sai và chụp ảnh toàn bộ món đã nhận (theo chính sách ShopeeFood `76251` trong vòng 12 giờ).
   3. Gặp bot hỗ trợ tự động trả lời theo kịch bản chung hoặc chuyển hàng đợi chờ nhân viên CSKH phản hồi/duyệt hoàn tiền (có thể mất vài tiếng đến hôm sau; nhiều người bỏ qua vì rườm rà).
-  *(Chèn ảnh chụp màn hình luồng app thật đã che thông tin cá nhân tại đây nếu có)*
+  - Nguồn đối chiếu quy trình hiện tại: Trang trợ giúp chính thức ShopeeFood (`76251`, `71069`, `71298` — kiểm ngày `27/11/2026`) và trải nghiệm người dùng trong khảo sát (`evidence/survey/results.csv`); ảnh chụp giao diện chat trên app cá nhân: *chưa chụp* (sẽ bổ sung nếu có trước demo).
 - Công cụ / AI đang được dùng cho việc này (nếu có) + nguồn. Không kiểm được thì ghi "chưa kiểm": Chatbot menu cố định / CSKH trên app ShopeeFood & GrabFood (theo trải nghiệm người dùng khảo sát `evidence/survey/results.csv`, chưa kiểm kiến trúc nội bộ).
 
 ## §1. Người dùng & bằng chứng *(guide 1.1, 1.2)*
@@ -19,17 +19,17 @@ Data BTC cấp đã dùng (nếu có — không commit nguyên file): Không có
 - Việc họ cố làm xong (`động từ + đối tượng + bối cảnh`, không có chữ AI): Gửi yêu cầu khiếu nại đơn giao đồ ăn bị thiếu/sai món hoặc giao trễ và nhận phương án xử lý rõ ràng ngay khi vừa nhận đơn.
 - Hôm nay họ giải bằng gì, hỏng ở đâu, vì sao chưa bỏ: Dùng chat hỗ trợ theo menu cố định của app; hỏng ở chỗ bot trả lời vòng vo không đúng trọng tâm, người dùng không biết mình có đủ điều kiện hoàn tiền/voucher hay không và phải chờ duyệt lâu; chưa bỏ vì vẫn cần đặt đồ ăn qua app và muốn lấy lại tiền món thiếu.
 - Pain (KHÔNG chữ AI): Người đặt đồ ăn — vừa nhận đơn thiếu/sai món hoặc giao trễ và mở chat khiếu nại — phải đi qua menu rườm rà, trả lời vòng vo, không rõ hạn mức/điều kiện hoàn tiền và chờ duyệt lâu — dẫn đến mất thời gian lúc đang đói, mất tiền món thiếu hoặc bỏ qua khiếu nại giữa chừng.
-- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): Khảo sát **20 phiếu hợp lệ / 21 phiếu tổng** (`evidence/survey/`): **17/20 (85.0%)** từng gặp sự cố khi nhận đơn; trong đó **8/17 (47.1%)** chọn *"Bỏ qua không khiếu nại vì thấy rườm rà / mất thời gian"*; vướng mắc lớn nhất là *"Bot trả lời chung chung, vòng vo"* (**5/20 — 25.0%**) và *"Chờ nhân viên phản hồi / duyệt hoàn tiền quá lâu"* (**5/20 — 25.0%**).
+- Bằng chứng — số chính + kết luận (chi tiết: `evidence/summary.md`): Khảo sát **23 phiếu hợp lệ / 24 phiếu tổng** (`evidence/survey/`): **20/23 (87.0%)** từng gặp sự cố khi nhận đơn; trong đó **10/20 (50.0%)** chọn *"Bỏ qua không khiếu nại vì thấy rườm rà / mất thời gian"* và **5/20 (25.0%)** chờ vài tiếng đến hôm sau; vướng mắc lớn nhất (n=23) là *"Bot trả lời chung chung, vòng vo"* (**5/23 — 21.7%**), *"Chờ nhân viên phản hồi / duyệt hoàn tiền quá lâu"* (**5/23 — 21.7%**) và *"Phải tìm lại hóa đơn giấy, chụp nhiều ảnh bằng chứng"* (**5/23 — 21.7%**). Kiểm chéo bằng **300 review công khai App Store VN** (ShopeeFood, Grab, Be — `evidence/data-mining.md`): **100/300 (33.3%)** nêu vấn đề giao nhận/CSKH, nổi bật là giao trễ/ghép đơn (**56/300 — 18.7%**) và CSKH/bot AI vòng vo/chậm hoàn tiền (**48/300 — 16.0%**).
 
 ## §2. Impact & quyết định chọn *(guide 1.3)*
 
 | Hướng | Bao nhiêu người gặp | Bao nhiêu lần / tháng | Mỗi lần tốn gì | Impact / tháng | Làm kịp không | Chọn? |
 |---|---|---|---|---|---|---|
-| D1 — Xử lý khiếu nại đơn giao đồ ăn (thiếu/sai món, giao trễ) | 17/20 người khảo sát (85%) | ~1–2 lần/tháng *(tự ước tính dựa trên tần suất đặt 1–10+ lần/tháng)* | ~15 phút khiếu nại/chờ đợi hoặc mất 35k–120k món thiếu | ~15–30 phút/người/tháng + giá trị món thiếu | Có | **Chọn** |
+| D1 — Xử lý khiếu nại đơn giao đồ ăn (thiếu/sai món, giao trễ) | 20/23 người khảo sát (87.0%) | ~1–2 lần/tháng *(tự ước tính dựa trên tần suất đặt 1–10+ lần/tháng)* | ~15 phút khiếu nại/chờ đợi hoặc mất 35k–120k món thiếu | ~15–30 phút/người/tháng + giá trị món thiếu | Có | **Chọn** |
 | Lọc review giả trên sàn TMĐT | Nhiều người mua *(chưa đo)* | ~2–4 lần/tháng *(tự ước tính)* | ~10 phút đọc lọc review | Khó đo chuẩn đúng/sai trong 2 ngày | Kém khả thi | Loại |
 | Tư vấn chọn món/quán theo khẩu vị | Nhiều người đặt *(chưa đo)* | ~4–8 lần/tháng *(tự ước tính)* | ~5 phút chọn món | Pain nhẹ hơn mất tiền đơn lỗi | Không ưu tiên | Loại |
 
-- **Impact / tháng** của hướng chọn = 1.000 người *(tự ước tính quy mô nhóm người dùng mục tiêu)* × 1.5 lần/tháng *(tự ước tính)* × 15 phút *(tự ước tính từ ca `S14` mất 20 phút với bot + chờ)* = **22.500 phút/tháng (~375 giờ/tháng)** + giảm tỷ lệ bỏ qua khiếu nại (47.1% theo khảo sát `evidence/survey/`).
+- **Impact / tháng** của hướng chọn = 1.000 người *(tự ước tính quy mô nhóm người dùng mục tiêu)* × 1.5 lần/tháng *(tự ước tính)* × 15 phút *(tự ước tính từ ca `S14` mất 20 phút với bot + chờ)* = **22.500 phút/tháng (~375 giờ/tháng)** + giảm tỷ lệ bỏ qua khiếu nại (50.0% trong số 20 người gặp sự cố theo khảo sát `evidence/survey/`).
 - Hướng ĐÃ LOẠI + vì sao (giữ lại, đừng xoá): Lọc review giả (khó định nghĩa ground-truth đúng/sai khách quan cho evaluator); Tư vấn chọn món (pain nhẹ, không cấp bách bằng mất tiền/thiếu món).
 - Số lần / tháng của từng kiểu người dùng (dùng cho persona ở §8): Nhóm đặt ít (1–5 lần/tháng): ~1 lần sự cố/tháng · Nhóm đặt vừa/nhiều (6–10+ lần/tháng): ~2 lần sự cố/tháng · Nhóm khiếu nại tần suất cao (`USR-004`): >3 lần/tháng.
 
@@ -126,6 +126,9 @@ flowchart LR
 | Thời điểm | Đổi gì | Vì sao (trỏ về câu thử / lỗi / bằng chứng nào) |
 |---|---|---|
 | 27/11 19:07 | Cập nhật số liệu khảo sát từ 14 lên 20 phiếu hợp lệ & 5 trích dẫn | Đạt ngưỡng R1 `≥20 người ngoài nhóm` (`evidence/survey/results.csv`, `evidence/summary.md`) |
+| 27/11 23:43 | Cập nhật số liệu khảo sát từ 20 lên 23 phiếu hợp lệ (24 tổng, thêm `S22`–`S24`) & bổ sung trích dẫn `S23` | Cập nhật dữ liệu thật mới thu thêm từ Google Sheets (`evidence/survey/results.csv`, `evidence/summary.md`, `README.md`) |
+| 28/11 00:20 | Bổ sung nguồn thứ hai: đào 300 review công khai trên Apple App Store VN (ShopeeFood, Grab, Be) và đối chiếu chéo với khảo sát | Hoàn thiện tiêu chí nguồn thứ hai của R1 (`evidence/data-mining.md`, `evidence/reviews_labeled.csv`, `evidence/count_reviews.py`, `evidence/summary.md`, `spec.md` §1) |
+| 28/11 00:40 | Hoàn thiện khai báo `docs/ai-usage.md`, ghi rõ nguồn chính sách §0, đồng bộ `README.md`, `AGENTS.md` và dòng phân công `canvas.md` | Đồng bộ các tài liệu nền và khai báo AI minh bạch theo Luật chung mục 1 (`docs/ai-usage.md`, `spec.md` §0, `README.md`, `AGENTS.md`, `canvas.md`) |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
