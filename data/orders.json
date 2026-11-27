@@ -1,0 +1,108 @@
+{
+  "metadata": {
+    "schema_reference": "mindweave/food-delivery-orders (Hugging Face), localized to VND",
+    "currency": "VND",
+    "anonymized": true
+  },
+  "orders": [
+    {
+      "order_id": "ORD-1001",
+      "user_id": "USR-001",
+      "restaurant_name": "Cơm Tấm Sài Gòn 88",
+      "status": "completed",
+      "ordered_at": "2026-11-27T11:30:00+07:00",
+      "estimated_delivery_at": "2026-11-27T12:05:00+07:00",
+      "actual_delivery_at": "2026-11-27T12:10:00+07:00",
+      "completed_at": "2026-11-27T12:10:00+07:00",
+      "delay_minutes": 5,
+      "payment_method": "ShopeePay",
+      "items": [
+        { "item_id": "ITM-01", "name": "Cơm tấm sườn bì chả", "qty": 1, "price_vnd": 65000 },
+        { "item_id": "ITM-02", "name": "Trà đào cam sả", "qty": 1, "price_vnd": 35000 }
+      ],
+      "total_vnd": 100000
+    },
+    {
+      "order_id": "ORD-1002",
+      "user_id": "USR-002",
+      "restaurant_name": "Lẩu & Nướng Phố Cổ",
+      "status": "completed",
+      "ordered_at": "2026-11-27T12:00:00+07:00",
+      "estimated_delivery_at": "2026-11-27T12:45:00+07:00",
+      "actual_delivery_at": "2026-11-27T12:50:00+07:00",
+      "completed_at": "2026-11-27T12:50:00+07:00",
+      "delay_minutes": 5,
+      "payment_method": "BankCard",
+      "items": [
+        { "item_id": "ITM-03", "name": "Combo lẩu thái hải sản 4 người", "qty": 1, "price_vnd": 380000 },
+        { "item_id": "ITM-04", "name": "Khay ba chỉ bò Mỹ thêm", "qty": 1, "price_vnd": 120000 }
+      ],
+      "total_vnd": 500000
+    },
+    {
+      "order_id": "ORD-1003",
+      "user_id": "USR-003",
+      "restaurant_name": "Bún Bò Huế Ngự Bình",
+      "status": "delivering",
+      "ordered_at": "2026-11-27T16:15:00+07:00",
+      "estimated_delivery_at": "2026-11-27T16:50:00+07:00",
+      "actual_delivery_at": null,
+      "completed_at": null,
+      "delay_minutes": 29,
+      "payment_method": "ShopeePay",
+      "items": [
+        { "item_id": "ITM-05", "name": "Bún bò đặc biệt", "qty": 2, "price_vnd": 75000 }
+      ],
+      "total_vnd": 150000
+    },
+    {
+      "order_id": "ORD-1004",
+      "user_id": "USR-001",
+      "restaurant_name": "Trà Sữa Mây",
+      "status": "completed",
+      "ordered_at": "2026-11-27T14:00:00+07:00",
+      "estimated_delivery_at": "2026-11-27T14:30:00+07:00",
+      "actual_delivery_at": "2026-11-27T15:12:00+07:00",
+      "completed_at": "2026-11-27T15:12:00+07:00",
+      "delay_minutes": 42,
+      "payment_method": "ShopeePay",
+      "items": [
+        { "item_id": "ITM-06", "name": "Trà sữa ô long trân châu trắng", "qty": 2, "price_vnd": 55000 }
+      ],
+      "total_vnd": 110000
+    },
+    {
+      "order_id": "ORD-1005",
+      "user_id": "USR-004",
+      "restaurant_name": "Gà Rán Giòn Tan",
+      "status": "completed",
+      "ordered_at": "2026-11-27T15:00:00+07:00",
+      "estimated_delivery_at": "2026-11-27T15:35:00+07:00",
+      "actual_delivery_at": "2026-11-27T15:40:00+07:00",
+      "completed_at": "2026-11-27T15:40:00+07:00",
+      "delay_minutes": 5,
+      "payment_method": "ShopeePay",
+      "items": [
+        { "item_id": "ITM-07", "name": "Phần 2 miếng gà giòn", "qty": 1, "price_vnd": 79000 },
+        { "item_id": "ITM-08", "name": "Khoai tây chiên cỡ vừa", "qty": 1, "price_vnd": 29000 }
+      ],
+      "total_vnd": 108000
+    },
+    {
+      "order_id": "ORD-1006",
+      "user_id": "USR-005",
+      "restaurant_name": "Phở Gia Truyền 1990",
+      "status": "completed",
+      "ordered_at": "2026-11-26T20:00:00+07:00",
+      "estimated_delivery_at": "2026-11-26T20:30:00+07:00",
+      "actual_delivery_at": "2026-11-26T20:35:00+07:00",
+      "completed_at": "2026-11-26T20:35:00+07:00",
+      "delay_minutes": 5,
+      "payment_method": "COD",
+      "items": [
+        { "item_id": "ITM-09", "name": "Phở bò tái nạm", "qty": 1, "price_vnd": 65000 }
+      ],
+      "total_vnd": 65000
+    }
+  ]
+}

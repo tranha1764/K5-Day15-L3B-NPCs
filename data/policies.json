@@ -1,0 +1,60 @@
+{
+  "metadata": {
+    "source": "Trung tâm Trợ giúp ShopeeFood",
+    "checked_date": "2026-11-27",
+    "note": "Chính sách thực tế kết hợp ngưỡng định lượng giả lập cho đề tài D1"
+  },
+  "policies": [
+    {
+      "id": "76251",
+      "topic": "missing_or_wrong_item",
+      "title": "Làm thế nào khi đơn hàng bị thiếu/sai món",
+      "source_url": "https://help.cs.shopeefood.vn/portal/102/article/76251-L%C3%A0m-th%E1%BA%BF-n%C3%A0o-khi-%C4%91%C6%A1n-h%C3%A0ng-b%E1%BB%8B-thi%E1%BA%BFu%2Fsai-m%C3%B3n",
+      "claim_window_hours": 12,
+      "required_evidence": [
+        "Ảnh thực tế toàn bộ món đã nhận",
+        "Mô tả chi tiết món bị thiếu hoặc sai"
+      ],
+      "resolution_options": [
+        "Liên hệ quán giao bổ sung",
+        "Bồi hoàn tiền món thiếu/sai"
+      ]
+    },
+    {
+      "id": "71069",
+      "topic": "late_delivery",
+      "title": "Làm thế nào khi Tài xế giao trễ đơn hàng của tôi (đang giao)",
+      "source_url": "https://help.cs.shopeefood.vn/portal/102/article/71069-L%C3%A0m-th%E1%BA%BF-n%C3%A0o-khi-T%C3%A0i-x%E1%BA%BF-giao-tr%E1%BB%85-%C4%91%C6%A1n-h%C3%A0ng-c%E1%BB%A7a-t%C3%B4i-(%C4%91ang-giao)",
+      "steps": [
+        "Kiểm tra thời gian dự kiến giao hàng trên ứng dụng",
+        "Liên hệ trực tiếp tài xế qua app trước",
+        "Nếu trễ quá lâu hoặc tài xế không phản hồi, chuyển sang Chat với CSKH"
+      ]
+    },
+    {
+      "id": "71298",
+      "topic": "refund_timeline",
+      "title": "Khi nào tôi nhận được tiền hoàn trả",
+      "source_url": "https://help.cs.shopeefood.vn/portal/102/article/71298-Khi-n%C3%A0o-t%C3%B4i-nh%E1%BA%ADn-%C4%91%C6%B0%E1%BB%A3c-ti%E1%BB%81n-ho%C3%A0n-tr%E1%BA%A3",
+      "verification_days": "1-3 ngày làm việc",
+      "refund_sla": {
+        "ShopeePay": "Trong vòng 24 giờ sau khi xác nhận",
+        "Shopee_Balance": "Trong vòng 24 giờ sau khi xác nhận",
+        "BankCard": "Tùy thuộc vào ngân hàng phát hành thẻ"
+      }
+    }
+  ],
+  "simulated_thresholds": {
+    "is_simulated": true,
+    "late_voucher_min_delay_minutes": 30,
+    "late_voucher_max_vnd": 50000,
+    "auto_refund_missing_item_max_vnd": 100000,
+    "high_frequency_complaint_limit_per_month": 3,
+    "mandatory_human_escalation_topics": [
+      "foreign_object_or_food_poisoning",
+      "exceeds_auto_refund_limit",
+      "high_frequency_complainant",
+      "threat_or_policy_bypass"
+    ]
+  }
+}
