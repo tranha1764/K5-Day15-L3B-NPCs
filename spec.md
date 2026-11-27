@@ -78,7 +78,7 @@ flowchart LR
   | Chỉ tạo bản nháp, không tự thực thi | Bước `create_resolution_draft` chỉ xuất bản nháp chờ người duyệt |
   | Đối chiếu nguồn sự thật trước khi trả lời | Bước `Tra cứu dữ liệu` đọc `orders.json` và `policies.json` trước khi AI Core sinh câu trả lời |
 
-- Phần nào còn giả: Tại mốc CP2, `codebase/agent.py` đang chạy `call_model` chế độ giả (`fake`) và công cụ mẫu; các ngưỡng định lượng nội bộ (100.000đ, 50.000đ, 30 phút, 3 lần/tháng) là giả lập theo đề bài D1.
+- Phần nào còn giả: Đã nối model thật (`gpt-4o-mini` qua `codebase/ai.py`) và 4 công cụ thật (`codebase/tools.py` đọc `data/*.json`); các ngưỡng định lượng nội bộ (`100.000đ`, `50.000đ`, `30 phút`, `3 lần/tháng`), dữ liệu đơn/lịch sử (`data/orders.json`, `data/history.json`) và hành động hoàn tiền/voucher (chỉ tạo bản nháp chờ CSKH duyệt) là giả lập theo đề bài D1.
 
 ## §5. Chỗ khó — 4 lớp + ≥6 kịch bản + 2 tấn công *(guide 2.3)*
 
@@ -101,7 +101,7 @@ flowchart LR
 - Bị đòi ngoài phạm vi (lớp 3): Vượt 100.000đ hoặc dọa 1★ bỏ qua quy trình → từ chối tự duyệt và chuyển CSKH · Trường hợp đặc thù lĩnh vực (lớp 4): Trễ 29p sát ngưỡng, khiếu nại >3 lần/tháng hoặc nghi dị vật/ngộ độc → chặn tự động và chuyển CSKH cấp cao.
 
 ## §7. Đánh giá & chuẩn "đạt" *(guide 2.4, 4.1)*
-- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 14 câu (thuong 4 · kho 8 · tu_choi 2; 5/14 từ người dùng / data thật) · metric: `eval/metric_spec.yaml` (4 metric)
+- Data card: `data/DATA_CARD.md` · bộ câu thử: `eval/benchmark.csv` — 24 câu (thuong 8 · kho 12 · tu_choi 4; 10/24 từ người dùng / data thật) · metric: `eval/metric_spec.yaml` (4 metric)
 - **Chuẩn "đạt"** (chốt **trước 19:30 Thứ Sáu 27/11**, giữ nguyên đến 23:59 Thứ Bảy 28/11): "Đạt khi ≥ 80% tổng câu thử đạt, VÀ 100% câu `tu_choi` / ca rủi ro cao (vượt 100.000đ, dị vật/ngộ độc, dọa 1★) không tự động duyệt hoàn tiền/voucher sai quy trình."
 - Kết quả: lượt 1 20/24 (83%) · lượt 2 24/24 (100%) — run ID: `run-1@20261128-011542` / `run-2@20261128-012206` → chi tiết `eval/report.md`, hồ sơ `eval/README.md`
 
@@ -109,7 +109,7 @@ flowchart LR
 - Persona + giá: `cost/personas.yaml` · lượt mô phỏng: `cost/simulate-1.csv` (`50` phiên, `seed 42`, lỗi `0/50`)
 - Chi phí / task thành công: **$0.00041 (≈ 11 ₫)** (model `gpt-4o-mini`) · **$0.0069 (≈ 176 ₫)** (model `gpt-4o`, đo token trên `gpt-4o-mini`)
 - Chi phí / tháng ở quy mô thật (`gpt-4o-mini`): thấp **$0.3978 (≈ 10.105 ₫)** · cơ sở **$0.7957 (≈ 20.210 ₫)** · cao **$2.39 (≈ 60.630 ₫)** → chi tiết `cost/cost-estimate.md`
-- So với impact / người / tháng (§2): **Rất đáng làm** — chỉ tốn **≈ 20 ₫/người/tháng** (cơ sở) để tiết kiệm ~15–30 phút xử lý khiếu nại và giảm tỷ lệ bỏ cuộc vì rườm rà (47.1%).
+- So với impact / người / tháng (§2): **Rất đáng làm** — chỉ tốn **≈ 20 ₫/người/tháng** (cơ sở) để tiết kiệm ~15–30 phút xử lý khiếu nại và giảm tỷ lệ bỏ cuộc vì rườm rà (50.0% trong số 20 người gặp sự cố).
 
 ## §9. Rủi ro & an toàn
 - Dữ liệu: Đã ẩn danh toàn bộ `order_id`, `user_id` trong `data/` và bỏ toàn bộ thông tin định danh cá nhân trong `evidence/survey/results.csv`; không đưa dữ liệu thật cá nhân vào model.
@@ -129,6 +129,9 @@ flowchart LR
 | 27/11 23:43 | Cập nhật số liệu khảo sát từ 20 lên 23 phiếu hợp lệ (24 tổng, thêm `S22`–`S24`) & bổ sung trích dẫn `S23` | Cập nhật dữ liệu thật mới thu thêm từ Google Sheets (`evidence/survey/results.csv`, `evidence/summary.md`, `README.md`) |
 | 28/11 00:20 | Bổ sung nguồn thứ hai: đào 300 review công khai trên Apple App Store VN (ShopeeFood, Grab, Be) và đối chiếu chéo với khảo sát | Hoàn thiện tiêu chí nguồn thứ hai của R1 (`evidence/data-mining.md`, `evidence/reviews_labeled.csv`, `evidence/count_reviews.py`, `evidence/summary.md`, `spec.md` §1) |
 | 28/11 00:40 | Hoàn thiện khai báo `docs/ai-usage.md`, ghi rõ nguồn chính sách §0, đồng bộ `README.md`, `AGENTS.md` và dòng phân công `canvas.md` | Đồng bộ các tài liệu nền và khai báo AI minh bạch theo Luật chung mục 1 (`docs/ai-usage.md`, `spec.md` §0, `README.md`, `AGENTS.md`, `canvas.md`) |
+| 28/11 01:03 | Mở rộng `eval/benchmark.csv` từ 14 lên 24 câu (`thuong 8`, `kho 12`, `tu_choi 4`) | Đủ ngưỡng CP3 20–30 câu và bổ sung tình huống từ khảo sát `S21`, `S23`, `D20`–`D24` (`eval/benchmark.csv`, `eval/README.md`) |
+| 28/11 01:42 | Cải tiến `AI-02` sau Lượt 1 (`20/24` → `24/24`) và chạy mô phỏng chi phí 50 phiên | Lượt 1 trượt 4 câu (`D17`, `D20`, `D22`, `D23`); bổ sung chặn prompt injection, data exfiltration, kênh hoàn tiền và thẩm mỹ trong `codebase/agent.py` (`eval/report.md`, `cost/simulate-1.csv`) |
+| 28/11 02:50 | Sửa render link Markdown `[nhãn](url)` ở Web UI (`MessageBubble.tsx`), đồng bộ số tỷ lệ bỏ cuộc `50.0%` và trạng thái thật/giả | URL `source_url` quá dài bị hiển thị thô dưới dạng `%C3%A0...` trên UI; đồng bộ số liệu với khảo sát `n=23` (`frontend/`, `cost/cost-estimate.md`, `README.md`, `docs/ai-usage.md`, `spec.md`) |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

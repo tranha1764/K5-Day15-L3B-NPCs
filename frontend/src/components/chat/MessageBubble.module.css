@@ -28,6 +28,16 @@
   margin: 6px 0 0;
 }
 
+.link {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.link:hover {
+  opacity: 0.85;
+}
+
 .meta {
   display: block;
   margin-top: 6px;

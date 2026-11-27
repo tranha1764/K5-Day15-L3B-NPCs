@@ -24,6 +24,6 @@ Chi phí / task thành công = chi phí trung bình mỗi phiên ÷ tỉ lệ đ
 
 ## 3. So với impact
 
-- Impact / người / tháng (`spec.md` §2): Tiết kiệm ~15–30 phút khiếu nại/chờ đợi mỗi tháng và giảm tỷ lệ bỏ qua khiếu nại (8/17 = 47.1% trong khảo sát) do thiếu rõ ràng điều kiện hoàn tiền/voucher.
+- Impact / người / tháng (`spec.md` §2): Tiết kiệm ~15–30 phút khiếu nại/chờ đợi mỗi tháng và giảm tỷ lệ bỏ qua khiếu nại (`10/20 = 50.0%` trong số người gặp sự cố theo khảo sát `n = 23`) do thiếu rõ ràng điều kiện hoàn tiền/voucher.
 - Chi phí / người / tháng (cơ sở, model `gpt-4o-mini`): **$0.00080 (≈ 20 ₫)** (~20.210 ₫/tháng cho 1.000 người dùng).
 - **Kết luận một dòng — đáng làm không:** **Rất đáng làm**, vì chỉ tốn ~**20 ₫/người/tháng** (rẻ hơn ~1.700 lần so với một món thiếu 35.000đ) nhưng giúp xử lý ngay lập tức và giảm gần một nửa ca người dùng bỏ cuộc khi khiếu nại.

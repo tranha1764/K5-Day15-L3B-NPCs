@@ -93,11 +93,11 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 
 | Thành phần | Thật / Giả | Ghi chú |
 |---|---|---|
-| Lời gọi AI ở quyết định trung tâm | **Giả** đến CP3 → **Thật** (bắt buộc từ CP3) | Model: ____ *(chưa chọn — `codebase/ai.py` đang chạy chế độ giả, token 0)* |
+| Lời gọi AI ở quyết định trung tâm | **Thật** | Model: `gpt-4o-mini` (OpenAI) qua `codebase/ai.py`, đo token thật từ `usage` trong `eval/run-1.csv`, `run-2.csv` và `cost/simulate-1.csv` |
 | Chính sách xử lý khiếu nại (`data/policies.json`) | **Thật** | Trang trợ giúp công khai ShopeeFood: 76251 (thiếu / sai món), 71069 (giao trễ), 71298 (hoàn tiền), kiểm 27/11/2026 |
 | Ngưỡng tự động (100.000đ · trễ 30 phút · 3 lần khiếu nại / tháng) | **Giả lập** | Sàn không công khai hạn mức tự động; nhóm tự đặt theo đề D1 |
 | Đơn hàng, lịch sử khiếu nại (`data/orders.json`, `data/history.json`) | **Giả lập** | Cấu trúc theo dataset công khai `mindweave/food-delivery-orders`, không có dữ liệu cá nhân thật |
-| Công cụ trong `codebase/tools.py` | **Giả** (còn công cụ mẫu của khung) | Sẽ thay bằng `lookup_order`, `lookup_user_history`, `lookup_policy`, `create_resolution_draft` như `spec.md` §4 |
+| Công cụ trong `codebase/tools.py` | **Thật** (đọc `data/*.json`) | Đã cài đủ 4 `@tool`: `lookup_order`, `lookup_user_history`, `lookup_policy`, `create_resolution_draft` như `spec.md` §4 |
 | Hoàn tiền / voucher / chuyển CSKH | **Chỉ bản nháp** | Không gửi, không chuyển tiền thật; người duyệt quyết |
 
 ## Dùng AI vào việc gì
