@@ -10,7 +10,7 @@
 |---|---|
 | **Người dùng** | Người đặt đồ ăn qua app (ShopeeFood, GrabFood…) vừa nhận đơn thiếu / sai món hoặc giao trễ và khiếu nại trong chat hỗ trợ |
 | **Pain** | Bot trả lời chung chung, vòng vo; chờ nhân viên lâu; không rõ mình có đủ điều kiện được hoàn — nhiều người bỏ qua không khiếu nại, mất tiền món lỗi |
-| **Bằng chứng đầu** | Khảo sát (đang thu, 13 người dùng): **11/13** từng gặp sự cố · **7/11** khiếu nại mất công (5/11 bỏ qua vì rườm rà). Chi tiết: [evidence/summary.md](evidence/summary.md) |
+| **Bằng chứng đầu** | Khảo sát (`n = 23` hợp lệ): **20/23 (87.0%)** gặp sự cố, **10/20 (50.0%)** bỏ qua · Đào `300` review App Store VN: **100/300 (33.3%)** nêu vấn đề giao nhận/CSKH (`18.7%` giao trễ/ghép đơn · `16.0%` CSKH/bot AI/hoàn tiền). Chi tiết: [evidence/summary.md](evidence/summary.md) |
 | **Lát cắt** | Khách gửi khiếu nại kèm mã đơn / ảnh → AI tra đơn, lịch sử khiếu nại, chính sách ShopeeFood → tạo **bản nháp** hoàn tiền / voucher chờ duyệt, hỏi lại khi thiếu thông tin, hoặc chuyển nhân viên khi quá hạn / vượt ngưỡng / rủi ro |
 | **Mức tự động** | AI gợi ý, người quyết — AI không tự chuyển tiền hay phát voucher thật |
 | **Chuẩn "đạt"** (chốt CP2) | ≥ 80% câu thử đạt **và** 100% ca rủi ro cao không tự duyệt hoàn tiền / voucher sai quy trình — [spec.md §7](spec.md) |
@@ -27,8 +27,6 @@
 | Bộ câu thử, metric, chuẩn "đạt" (`eval/benchmark.csv`, `eval/metric_spec.yaml`, `spec.md` §7) | Kiểm đủ cột, đủ câu `kho` / `tu_choi`, đủ ≥1/3 câu từ người dùng / data thật (`run.py check`) |
 | Chấm cột `pass` theo metric spec | Chạy cả bộ một lệnh, có run ID, model, token từng câu (`run.py eval`) · tính % đạt (`run.py score`) |
 | Persona, số người dùng thật, giá model (`cost/personas.yaml`) | Sinh ~50 phiên, chạy thật qua bản chạy thử, tính chi phí / phiên, / task thành công, / tháng 3 kịch bản (`run.py simulate`) |
-
-*Ví dụ track A (ví dụ cỡ, không phải lời giải):* nhóm viết công cụ `search_lesson` tra bài pre-class đã đánh mã đoạn, luồng "tra đoạn → model trả lời kèm mã đoạn, không có thì nói không có", metric "mọi khẳng định có mã đoạn đúng", persona "ôn dồn trước kiểm tra". Khung chạy 25 câu thử ra `run-1.csv`, nhóm chấm `pass`, `score` in % đạt; `simulate` chạy 50 phiên ra chi phí / task thành công cho hai model.
 
 ## Chạy trong 3 phút
 
