@@ -1,0 +1,32 @@
+.form {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid var(--line);
+}
+
+.form textarea {
+  flex: 1;
+  resize: none;
+  height: 52px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.form textarea:focus {
+  outline: 2px solid var(--brand);
+  outline-offset: -1px;
+}
+
+.form button {
+  background: var(--brand);
+  color: var(--brand-ink);
+  border: 0;
+  border-radius: 10px;
+  padding: 0 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
