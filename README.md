@@ -82,6 +82,8 @@ Nhóm dùng stack khác (Node, Streamlit, notebook…): sửa hàm `run_app()` t
 | `codebase/agent.py` | `answer(text)` — luồng chính, đúng hình dạng ở `spec.md` §4. Khung có sẵn một workflow 2 bước *ví dụ* | 3.2 |
 | `codebase/tools.py` | Công cụ của bài toán, mỗi công cụ một hàm có `@tool` | 2.2, 3.2 |
 | `codebase/ai.py` | `call_model(system, user)` — chỗ duy nhất gọi model. Chưa điền `.env` thì chạy **chế độ giả** | 3.3 |
+| `codebase/app.py` | Server web (thư viện chuẩn): `python run.py` mở giao diện chat ở `http://127.0.0.1:8000`, API `POST /api/chat`. Bản dòng lệnh: `python codebase/app.py --cli` | 3.2 |
+| `frontend/` | Mã nguồn giao diện React, build sẵn vào `codebase/static/` — **chạy không cần Node**; sửa giao diện xem [frontend/README.md](frontend/README.md) | 3.2 |
 
 - **Trước CP2:** để chế độ giả, công cụ trả dữ liệu giả — `python run.py` đi hết luồng là đủ.
 - **Trước CP3:** nối model thật theo [docs/connect-model.md](docs/connect-model.md), `eval --try` thấy token > 0 rồi mới `eval`.

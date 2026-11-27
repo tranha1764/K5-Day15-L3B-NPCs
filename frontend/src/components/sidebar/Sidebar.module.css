@@ -1,0 +1,57 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.placeholder {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.statusBox {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+.statusBox strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section {
+  margin-top: 10px;
+}
+
+.note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+
+.items {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.items td {
+  padding: 4px 0;
+  border-top: 1px solid var(--line);
+}
+
+.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.errors {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  font-size: 12px;
+  color: var(--bad-ink);
+}

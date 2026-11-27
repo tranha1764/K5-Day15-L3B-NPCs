@@ -1,0 +1,10 @@
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 110px);
+  min-height: 480px;
+  overflow: hidden;
+}

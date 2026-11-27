@@ -1,0 +1,40 @@
+.header {
+  background: var(--brand);
+  color: var(--brand-ink);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.titles {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.titles h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.titles span {
+  font-size: 13px;
+  opacity: 0.92;
+}
+
+.reset {
+  border: 1px solid rgb(255 255 255 / 0.6);
+  background: transparent;
+  color: var(--brand-ink);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.reset:hover:not(:disabled) {
+  background: rgb(255 255 255 / 0.15);
+}
