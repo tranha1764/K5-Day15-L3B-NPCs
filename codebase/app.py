@@ -194,12 +194,12 @@ def make_handler(tracing, answer):
     return Handler
 
 
-def _bind(handler, first_port):
+def _bind(handler, first_port, host="127.0.0.1"):
     """Thử cổng first_port, bận thì thử 9 cổng kế tiếp."""
     last = None
     for port in range(first_port, first_port + 10):
         try:
-            return ThreadingHTTPServer(("127.0.0.1", port), handler), port
+            return ThreadingHTTPServer((host, port), handler), port
         except OSError as e:
             last = e
     raise OSError("Không mở được cổng %d–%d: %s" % (first_port, first_port + 9, last))
@@ -209,12 +209,14 @@ def run_web():
     tracing, answer = _load_codebase()
     if answer is None:
         return 1
+    host = os.environ.get("APP_HOST") or "127.0.0.1"
+    raw_port = os.environ.get("PORT") or os.environ.get("APP_PORT") or "8000"
     try:
-        server, port = _bind(make_handler(tracing, answer), int(os.environ.get("APP_PORT") or 8000))
+        server, port = _bind(make_handler(tracing, answer), int(raw_port), host=host)
     except (OSError, ValueError) as e:
         print(e)
         return 1
-    url = "http://127.0.0.1:%d" % port
+    url = "http://%s:%d" % (host, port)
     print("Bản chạy thử (web) đang chạy: %s" % url, flush=True)
     print("Dừng: Ctrl+C. Bản dòng lệnh: python codebase/app.py --cli", flush=True)
     if not os.environ.get("APP_NO_BROWSER"):
