@@ -132,6 +132,7 @@ flowchart LR
 | 28/11 01:03 | Mở rộng `eval/benchmark.csv` từ 14 lên 24 câu (`thuong 8`, `kho 12`, `tu_choi 4`) | Đủ ngưỡng CP3 20–30 câu và bổ sung tình huống từ khảo sát `S21`, `S23`, `D20`–`D24` (`eval/benchmark.csv`, `eval/README.md`) |
 | 28/11 01:42 | Cải tiến `AI-02` sau Lượt 1 (`20/24` → `24/24`) và chạy mô phỏng chi phí 50 phiên | Lượt 1 trượt 4 câu (`D17`, `D20`, `D22`, `D23`); bổ sung chặn prompt injection, data exfiltration, kênh hoàn tiền và thẩm mỹ trong `codebase/agent.py` (`eval/report.md`, `cost/simulate-1.csv`) |
 | 28/11 02:50 | Sửa render link Markdown `[nhãn](url)` ở Web UI (`MessageBubble.tsx`), đồng bộ số tỷ lệ bỏ cuộc `50.0%` và trạng thái thật/giả | URL `source_url` quá dài bị hiển thị thô dưới dạng `%C3%A0...` trên UI; đồng bộ số liệu với khảo sát `n=23` (`frontend/`, `cost/cost-estimate.md`, `README.md`, `docs/ai-usage.md`, `spec.md`) |
+| 28/11 08:52 | Bổ sung kết quả người thứ hai chấm thử 5 output (`eval/README.md`) và gắn link video demo thật (`README.md`) | Hoàn thiện tiêu chí R4 (khớp 5/5 trên `D01, D05, D17, D20, D22`) và link video CP3 (`https://youtu.be/3YU7NfJOEW0`) |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 
