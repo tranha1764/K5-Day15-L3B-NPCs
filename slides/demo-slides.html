@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +30,11 @@
       --accent: #C2410C;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -61,7 +66,9 @@
       overflow: hidden;
     }
 
-    .slide.active { display: flex; }
+    .slide.active {
+      display: flex;
+    }
 
     .top-bar {
       display: flex;
@@ -83,10 +90,22 @@
       color: #fff;
       background: var(--navy);
     }
-    .pill.green { background: var(--green); }
-    .pill.amber { background: #B45309; }
-    .pill.red { background: var(--red); }
-    .pill.purple { background: var(--purple); }
+
+    .pill.green {
+      background: var(--green);
+    }
+
+    .pill.amber {
+      background: #B45309;
+    }
+
+    .pill.red {
+      background: var(--red);
+    }
+
+    .pill.purple {
+      background: var(--purple);
+    }
 
     .meta-right {
       font-size: 13px;
@@ -95,13 +114,13 @@
     }
 
     h1 {
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
       font-size: 38px;
       line-height: 1.18;
-      font-weight: 700;
+      font-weight: 800;
       color: #111827;
       margin-bottom: 20px;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
     }
 
     .subtitle {
@@ -142,11 +161,30 @@
       gap: 10px;
     }
 
-    .card.green { background: var(--green-bg); border-color: var(--green-bd); }
-    .card.blue { background: var(--navy-bg); border-color: var(--navy-bd); }
-    .card.amber { background: var(--amber-bg); border-color: var(--amber-bd); }
-    .card.red { background: var(--red-bg); border-color: var(--red-bd); }
-    .card.purple { background: var(--purple-bg); border-color: var(--purple-bd); }
+    .card.green {
+      background: var(--green-bg);
+      border-color: var(--green-bd);
+    }
+
+    .card.blue {
+      background: var(--navy-bg);
+      border-color: var(--navy-bd);
+    }
+
+    .card.amber {
+      background: var(--amber-bg);
+      border-color: var(--amber-bd);
+    }
+
+    .card.red {
+      background: var(--red-bg);
+      border-color: var(--red-bd);
+    }
+
+    .card.purple {
+      background: var(--purple-bg);
+      border-color: var(--purple-bd);
+    }
 
     .card-title {
       font-size: 16px;
@@ -156,10 +194,22 @@
       align-items: center;
       gap: 8px;
     }
-    .card.green .card-title { color: var(--green); }
-    .card.blue .card-title { color: var(--navy); }
-    .card.amber .card-title { color: var(--amber); }
-    .card.red .card-title { color: var(--red); }
+
+    .card.green .card-title {
+      color: var(--green);
+    }
+
+    .card.blue .card-title {
+      color: var(--navy);
+    }
+
+    .card.amber .card-title {
+      color: var(--amber);
+    }
+
+    .card.red .card-title {
+      color: var(--red);
+    }
 
     .stat-big {
       font-size: 36px;
@@ -167,6 +217,7 @@
       line-height: 1.1;
       color: var(--ink);
     }
+
     .stat-label {
       font-size: 13.5px;
       color: var(--muted);
@@ -181,10 +232,12 @@
       font-size: 15px;
       line-height: 1.48;
     }
+
     ul.clean li {
       padding-left: 16px;
       position: relative;
     }
+
     ul.clean li::before {
       content: "•";
       position: absolute;
@@ -203,6 +256,7 @@
       line-height: 1.45;
       color: #292524;
     }
+
     .quote-src {
       display: block;
       margin-top: 4px;
@@ -228,19 +282,29 @@
       overflow: hidden;
       border: 1.5px solid var(--border);
     }
-    th, td {
+
+    th,
+    td {
       padding: 10px 13px;
       text-align: left;
       border-bottom: 1px solid var(--border);
     }
+
     th {
       background: #F3EFE6;
       font-weight: 700;
       font-size: 13px;
       color: #44403C;
     }
-    tr:last-child td { border-bottom: none; }
-    tr.highlight { background: var(--green-bg); font-weight: 600; }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr.highlight {
+      background: var(--green-bg);
+      font-weight: 600;
+    }
 
     .slice-banner {
       margin-top: auto;
@@ -254,6 +318,7 @@
       gap: 10px;
       flex-wrap: wrap;
     }
+
     .slice-label {
       font-size: 12px;
       font-weight: 800;
@@ -261,6 +326,7 @@
       color: var(--navy);
       text-transform: uppercase;
     }
+
     .slice-step {
       background: #fff;
       border: 1.5px solid var(--navy-bd);
@@ -270,7 +336,12 @@
       font-weight: 700;
       color: #1E293B;
     }
-    .arrow { color: var(--navy); font-weight: 800; font-size: 16px; }
+
+    .arrow {
+      color: var(--navy);
+      font-weight: 800;
+      font-size: 16px;
+    }
 
     .badge {
       display: inline-block;
@@ -279,9 +350,24 @@
       font-size: 12px;
       font-weight: 700;
     }
-    .badge.green { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-bd); }
-    .badge.amber { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-bd); }
-    .badge.red { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-bd); }
+
+    .badge.green {
+      background: var(--green-bg);
+      color: var(--green);
+      border: 1px solid var(--green-bd);
+    }
+
+    .badge.amber {
+      background: var(--amber-bg);
+      color: var(--amber);
+      border: 1px solid var(--amber-bd);
+    }
+
+    .badge.red {
+      background: var(--red-bg);
+      color: var(--red);
+      border: 1px solid var(--red-bd);
+    }
 
     /* Footer */
     .footer {
@@ -295,26 +381,33 @@
       padding: 0 28px;
       flex-shrink: 0;
     }
+
     .progress-track {
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 3px;
       background: #EFECE4;
     }
+
     .progress-fill {
       height: 100%;
       background: var(--accent);
       transition: width 0.25s ease;
     }
+
     .shortcuts {
       font-size: 12.5px;
       color: var(--muted);
     }
+
     .nav-controls {
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .btn {
       border: 1px solid var(--border);
       background: #fff;
@@ -326,13 +419,21 @@
       cursor: pointer;
       transition: all 0.15s;
     }
-    .btn:hover { background: #F5F2EB; }
+
+    .btn:hover {
+      background: #F5F2EB;
+    }
+
     .btn.primary {
       background: #1E3A5F;
       color: #fff;
       border-color: #1E3A5F;
     }
-    .btn.primary:hover { background: #162C49; }
+
+    .btn.primary:hover {
+      background: #162C49;
+    }
+
     .counter {
       font-size: 13px;
       font-weight: 700;
@@ -343,9 +444,24 @@
 
     /* Print to PDF */
     @media print {
-      @page { size: landscape; margin: 0; }
-      body { background: var(--bg); height: auto; overflow: visible; display: block; }
-      .deck { height: auto; width: 100%; display: block; }
+      @page {
+        size: landscape;
+        margin: 0;
+      }
+
+      body {
+        background: var(--bg);
+        height: auto;
+        overflow: visible;
+        display: block;
+      }
+
+      .deck {
+        height: auto;
+        width: 100%;
+        display: block;
+      }
+
       .slide {
         display: flex !important;
         width: 100vw;
@@ -353,10 +469,14 @@
         page-break-after: always;
         break-after: page;
       }
-      .footer { display: none !important; }
+
+      .footer {
+        display: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="deck">
 
@@ -366,8 +486,10 @@
         <span class="pill">TRACK D · THƯƠNG MẠI ĐIỆN TỬ · ĐỀ TÀI D1</span>
         <span class="meta-right">Nhóm NPCs · Lớp L3B · Phòng C401 · Zone 7</span>
       </div>
-      <h1 style="font-size: 44px; margin-top: 14px;">Xử lý Khiếu nại Đơn Giao Đồ Ăn<br/>Minh bạch Điều kiện &amp; Chặn Rủi ro Bằng Code</h1>
-      <p class="subtitle">Trợ lý AI tra cứu đơn hàng, lịch sử khiếu nại và chính sách ShopeeFood để đề xuất bản nháp hoàn tiền/voucher chờ duyệt hoặc chuyển CSKH đúng ca biên.</p>
+      <h1 style="font-size: 44px; margin-top: 14px;">Xử lý Khiếu nại Đơn Giao Đồ Ăn<br />Minh bạch Điều kiện &amp; Chặn
+        Rủi ro Bằng Code</h1>
+      <p class="subtitle">Trợ lý AI tra cứu đơn hàng, lịch sử khiếu nại và chính sách ShopeeFood để đề xuất bản nháp
+        hoàn tiền/voucher chờ duyệt hoặc chuyển CSKH đúng ca biên.</p>
 
       <div class="grid-4" style="margin-top: 8px;">
         <div class="card amber">
@@ -408,22 +530,26 @@
     <section class="slide">
       <div class="top-bar">
         <span class="pill green">1 · NGƯỜI DÙNG &amp; BẰNG CHỨNG PAIN</span>
-        <span class="meta-right">Nguồn: <code>evidence/summary.md</code> · Khảo sát n = 23 &amp; App Store N = 300</span>
+        <span class="meta-right">Nguồn: <code>evidence/summary.md</code> · Khảo sát n = 23 &amp; App Store N =
+          300</span>
       </div>
       <h1>87% Người Dùng Gặp Sự Cố — 50% Bỏ Qua Vì Rườm Rà</h1>
 
       <div class="grid-3" style="margin-bottom: 16px;">
         <div class="card red">
           <div class="stat-big" style="color: var(--red);">20 / 23 (87.0%)</div>
-          <div class="stat-label">Người khảo sát từng gặp sự cố đơn đồ ăn (giao trễ &gt;30p: <b>47.8%</b>, thiếu món: <b>43.5%</b>, sai món: <b>39.1%</b>).</div>
+          <div class="stat-label">Người khảo sát từng gặp sự cố đơn đồ ăn (giao trễ &gt;30p: <b>47.8%</b>, thiếu món:
+            <b>43.5%</b>, sai món: <b>39.1%</b>).</div>
         </div>
         <div class="card amber">
           <div class="stat-big" style="color: var(--amber);">10 / 20 (50.0%)</div>
-          <div class="stat-label">Chọn <b>bỏ qua không khiếu nại</b> vì rườm rà; cộng thêm 25% chờ vài tiếng đến hôm sau (<b>75%</b> bỏ cuộc hoặc chờ lâu).</div>
+          <div class="stat-label">Chọn <b>bỏ qua không khiếu nại</b> vì rườm rà; cộng thêm 25% chờ vài tiếng đến hôm sau
+            (<b>75%</b> bỏ cuộc hoặc chờ lâu).</div>
         </div>
         <div class="card blue">
           <div class="stat-big" style="color: var(--navy);">100 / 300 (33.3%)</div>
-          <div class="stat-label">Review App Store (ShopeeFood, Grab, Be) nêu vấn đề giao nhận/CSKH; riêng <b>16.0%</b> kêu bot AI vòng vo, chậm hoàn tiền.</div>
+          <div class="stat-label">Review App Store (ShopeeFood, Grab, Be) nêu vấn đề giao nhận/CSKH; riêng <b>16.0%</b>
+            kêu bot AI vòng vo, chậm hoàn tiền.</div>
         </div>
       </div>
 
@@ -439,12 +565,14 @@
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <div class="quote-box">
-            "Đơn ghi đã giao thành công nhưng trước cửa nhà chẳng có ai. Bot hỗ trợ trả lời tự động lòng vòng suốt 20 phút, cuối cùng phải gửi ảnh camera mới được chuyển nhân viên."
+            "Đơn ghi đã giao thành công nhưng trước cửa nhà chẳng có ai. Bot hỗ trợ trả lời tự động lòng vòng suốt 20
+            phút, cuối cùng phải gửi ảnh camera mới được chuyển nhân viên."
             <span class="quote-src">— Phiếu khảo sát S14</span>
           </div>
           <div class="quote-box">
-            "Khá khó chịu vì không được hoàn tiền mà chỉ được tặng voucher tương đương giá... nghĩa là bị lố tiền ship vì không dùng được freeship nữa."
-            <span class="quote-src">— Phiếu khảo sát S23 (khớp review R221)</span>
+            "Khá khó chịu vì không được hoàn tiền mà chỉ được tặng voucher tương đương giá... nghĩa là bị lố tiền ship
+            vì không dùng được freeship nữa."
+            <span class="quote-src">— Phiếu khảo sát S23</span>
           </div>
         </div>
       </div>
@@ -500,14 +628,16 @@
           <div class="card-title">Impact ước tính hàng tháng (quy mô thử nghiệm)</div>
           <div class="stat-big" style="color: var(--green);">22.500 phút / tháng</div>
           <div class="stat-label">
-            <code>1.000 người × 1.5 lần/tháng × 15 phút = ~375 giờ/tháng</code> tiết kiệm được + kéo giảm tỷ lệ bỏ cuộc khiếu nại (50% ở nhóm gặp sự cố).
+            <code>1.000 người × 1.5 lần/tháng × 15 phút = ~375 giờ/tháng</code> tiết kiệm được + kéo giảm tỷ lệ bỏ cuộc
+            khiếu nại (50% ở nhóm gặp sự cố).
           </div>
         </div>
         <div class="card">
           <div class="card-title">Khác biệt so với chatbot app hiện tại</div>
           <ul class="clean">
             <li><b>Chatbot cây menu:</b> ép chọn nhiều bước, trả lời vòng vo 20 phút.</li>
-            <li><b>Giải pháp D1:</b> tra trực tiếp đơn hàng + lịch sử + chính sách ngay lượt đầu; trả lời thẳng điều kiện, không tự ép voucher thay tiền hoàn.</li>
+            <li><b>Giải pháp D1:</b> tra trực tiếp đơn hàng + lịch sử + chính sách ngay lượt đầu; trả lời thẳng điều
+              kiện, không tự ép voucher thay tiền hoàn.</li>
           </ul>
         </div>
       </div>
@@ -517,30 +647,35 @@
     <section class="slide">
       <div class="top-bar">
         <span class="pill">3 · GIẢI PHÁP &amp; KIẾN TRÚC GUARDRAIL</span>
-        <span class="meta-right">Nguồn: <code>spec.md</code> §4 · <code>docs/adr/0001-ai-guardrail-architecture.md</code></span>
+        <span class="meta-right">Nguồn: <code>spec.md</code> §4 ·
+          <code>docs/adr/0001-ai-guardrail-architecture.md</code></span>
       </div>
       <h1>AI Gợi Ý, Người Quyết — Code Khóa Ngưỡng Trước Khi LLM Trả Lời</h1>
 
       <div class="slice-banner" style="margin-top: 0; margin-bottom: 18px;">
         <span class="slice-step">Input khách hàng</span>
         <span class="arrow">→</span>
-        <span class="slice-step">4 <code>@tool</code> (orders, history, policies)</span>
+        <span class="slice-step">4 <code>@tool</code> (tra cứu + tạo nháp)</span>
         <span class="arrow">→</span>
         <span class="slice-step">Guardrail cứng bằng Python</span>
         <span class="arrow">→</span>
-        <span class="slice-step"><code>gpt-4o-mini</code> diễn đạt</span>
+        <span class="slice-step"><code>gpt-4o-mini</code> diễn đạt (1 lần/lượt)</span>
         <span class="arrow">→</span>
         <span class="slice-step">Bản nháp / Chuyển CSKH</span>
       </div>
 
       <div class="grid-2">
         <div class="card blue">
-          <div class="card-title">4 Công cụ (<code>codebase/tools.py</code>)</div>
+          <div class="card-title">4 Công cụ (<code>codebase/tools.py</code>) &amp; Lý do kiến trúc</div>
           <ul class="clean">
             <li><code>lookup_order(order_id)</code>: tra món, giá VNĐ, số phút trễ, giờ hoàn thành.</li>
             <li><code>lookup_user_history(user_id)</code>: đếm số lần khiếu nại/tháng.</li>
-            <li><code>lookup_policy(topic)</code>: đọc policy <code>76251</code>, <code>71069</code>, <code>71298</code> &amp; ngưỡng giả lập.</li>
-            <li><code>create_resolution_draft(...)</code>: <b>chỉ tạo bản nháp</b> chờ CSKH duyệt, không tự chi tiền thật.</li>
+            <li><code>lookup_policy(topic)</code>: đọc policy <code>76251</code>, <code>71069</code>, <code>71298</code>
+              &amp; ngưỡng giả lập.</li>
+            <li><code>create_resolution_draft(...)</code>: <b>chỉ tạo bản nháp</b> chờ CSKH duyệt, không tự chi tiền
+              thật.</li>
+            <li><b>Vì sao workflow cố định + gợi ý:</b> tránh sót bước kiểm tra, giảm token; hoàn tiền &amp; an toàn
+              thực phẩm cần người duyệt cuối.</li>
           </ul>
         </div>
         <div class="card red">
@@ -559,7 +694,8 @@
     <section class="slide">
       <div class="top-bar">
         <span class="pill green">4 · DEMO LIVE &amp; SẢN PHẨM WEB</span>
-        <span class="meta-right">Nguồn: <code>eval/benchmark.csv</code> · Deploy Render + Local <code>python3 run.py</code></span>
+        <span class="meta-right">Nguồn: <code>eval/benchmark.csv</code> · Deploy Render + Local
+          <code>python run.py</code></span>
       </div>
       <h1>2 Kịch Bản Demo: Ca Thường Đủ Điều Kiện vs. Ca Biên Vượt Ngưỡng</h1>
 
@@ -569,7 +705,8 @@
           <ul class="clean">
             <li><b>Input:</b> <i>"Đơn ORD-1001 thiếu ly Trà đào cam sả 35.000đ, đã chụp ảnh toàn bộ món."</i></li>
             <li><b>Xử lý:</b> Trong hạn 12h + có ảnh + <code>35k ≤ 100k</code> + lịch sử 1 lần/tháng.</li>
-            <li><b>Kết quả:</b> <span class="badge green">draft_ready</span> Tạo <b>bản nháp hoàn 35.000đ</b> về ShopeePay (24h sau xác nhận, kiểm tra 1–3 ngày làm việc).</li>
+            <li><b>Kết quả:</b> <span class="badge green">draft_ready</span> Tạo <b>bản nháp hoàn 35.000đ</b> về
+              ShopeePay (24h sau xác nhận, kiểm tra 1–3 ngày làm việc).</li>
           </ul>
         </div>
         <div class="card amber">
@@ -577,7 +714,8 @@
           <ul class="clean">
             <li><b>Input:</b> <i>"Đơn ORD-1002 tổng 500.000đ thiếu Khay ba chỉ bò Mỹ 120.000đ, đã có ảnh."</i></li>
             <li><b>Xử lý:</b> Guardrail phát hiện <code>120.000đ &gt; 100.000đ</code> (vượt hạn mức tự động).</li>
-            <li><b>Kết quả:</b> <span class="badge red">escalated</span> Không tự động duyệt hoàn tiền; lập phiếu <b>chuyển CSKH / người duyệt</b>.</li>
+            <li><b>Kết quả:</b> <span class="badge red">escalated</span> Không tự động duyệt hoàn tiền; lập phiếu
+              <b>chuyển CSKH / người duyệt</b>.</li>
           </ul>
         </div>
       </div>
@@ -585,8 +723,11 @@
       <div class="card">
         <div class="card-title">Hỗ trợ hội thoại nhiều lượt &amp; Kênh dự phòng khi Demo</div>
         <ul class="clean">
-          <li><b>Web UI (React + Python):</b> Tự nhớ ngữ cảnh khi ca còn <code>need_info</code> (thiếu món / thiếu ảnh) và tự reset khi hoàn tất đơn cũ; hỗ trợ từ khóa <code>"giao lâu"</code>, <code>"giao chậm"</code>.</li>
-          <li><b>Link Demo Online (Render):</b> <code>https://npcs-d1-food-complaint.onrender.com</code> · <b>Dự phòng mất mạng:</b> chạy local <code>python3 run.py</code> + Video Demo đã kiểm Tab Ẩn Danh.</li>
+          <li><b>Web UI (React + Python):</b> Tự nhớ ngữ cảnh khi ca còn <code>need_info</code> (thiếu món / thiếu ảnh)
+            và tự reset khi hoàn tất đơn cũ; hỗ trợ từ khóa <code>"giao lâu"</code>, <code>"giao chậm"</code>.</li>
+          <li><b>Demo Online:</b> <code>https://npcs-d1-food-complaint.onrender.com</code> · <b>Local:</b>
+            <code>python run.py</code> · <b>Video dự phòng (ẩn danh):</b> <a href="https://youtu.be/3YU7NfJOEW0"
+              target="_blank" style="color: var(--navy); font-weight: 600;">youtu.be/3YU7NfJOEW0</a></li>
         </ul>
       </div>
     </section>
@@ -595,7 +736,8 @@
     <section class="slide">
       <div class="top-bar">
         <span class="pill purple">5 · ĐÁNH GIÁ THẾ NÀO</span>
-        <span class="meta-right">Nguồn: <code>eval/README.md</code> · <code>eval/report.md</code> · Chuẩn chốt CP2</span>
+        <span class="meta-right">Nguồn: <code>eval/README.md</code> · <code>eval/report.md</code> · Chuẩn chốt
+          CP2</span>
       </div>
       <h1>Từ 83% (Lượt 1) Lên 100% (Lượt 2) Nhờ Bịt 4 Lỗ Hổng Guardrail</h1>
 
@@ -639,16 +781,20 @@
         <div class="card">
           <div class="card-title">Bộ câu thử &amp; Metric (chốt trước CP2)</div>
           <ul class="clean">
-            <li><b>24 câu thử:</b> <code>10/24 (41.7%)</code> từ người dùng/data thật; phủ 5 chiều (sự cố, ngưỡng biên, lịch sử, thiếu info, tấn công).</li>
-            <li><b>4 Metric:</b> Đúng chính sách/dữ liệu · Chặn rủi ro 100% · Hỏi lại khi thiếu info · Chỉ tạo bản nháp.</li>
+            <li><b>24 câu thử:</b> <code>10/24 (41.7%)</code> từ người dùng/data thật; phủ 5 chiều (sự cố, ngưỡng biên,
+              lịch sử, thiếu info, tấn công).</li>
+            <li><b>4 Metric:</b> Đúng chính sách/dữ liệu · Chặn rủi ro 100% · Hỏi lại khi thiếu info · Chỉ tạo bản nháp.
+            </li>
             <li><b>Kiểm chéo 2 người:</b> khớp <b>5/5</b> output độc lập.</li>
           </ul>
         </div>
         <div class="card blue">
           <div class="card-title">1 lần cải tiến giữa Lượt 1 → Lượt 2</div>
           <ul class="clean">
-            <li>Thêm bộ chặn <code>PROMPT_INJECTION_TERMS</code> &amp; <code>DATA_EXFIL_TERMS</code> (sửa <code>D22, D23</code> từ 50% → 100%).</li>
-            <li>Mở rộng từ khóa kênh hoàn tiền (<code>D20</code>) &amp; nhánh khiếu nại thẩm mỹ không giống ảnh (<code>D17</code>).</li>
+            <li>Thêm bộ chặn <code>PROMPT_INJECTION_TERMS</code> &amp; <code>DATA_EXFIL_TERMS</code> (sửa
+              <code>D22, D23</code> từ 50% → 100%).</li>
+            <li>Mở rộng từ khóa kênh hoàn tiền (<code>D20</code>) &amp; nhánh khiếu nại thẩm mỹ không giống ảnh
+              (<code>D17</code>).</li>
           </ul>
         </div>
       </div>
@@ -707,12 +853,14 @@
         <div class="card green">
           <div class="card-title">So với Impact (§2)</div>
           <div class="stat-big" style="color: var(--green);">~20 ₫ / tháng</div>
-          <div class="stat-label">Rẻ hơn <b>~1.700 lần</b> giá trị 1 món thiếu (35.000đ) và tiết kiệm ~15–30 phút chờ/người/tháng.</div>
+          <div class="stat-label">Rẻ hơn <b>~1.700 lần</b> giá trị 1 món thiếu (35.000đ) và tiết kiệm ~15–30 phút
+            chờ/người/tháng.</div>
         </div>
         <div class="card amber">
           <div class="card-title">Vì sao rẻ?</div>
           <div class="stat-label" style="font-size: 14.5px; line-height: 1.5;">
-            Kiến trúc <b>workflow cố định</b>: Python tra cứu 4 tool &amp; khóa quyết định trước, chỉ gọi LLM <b>1 lần/lượt</b> (~1.343 token vào / 131 token ra).
+            Kiến trúc <b>workflow cố định</b>: Python tra cứu 4 tool &amp; khóa quyết định trước, chỉ gọi LLM <b>1
+              lần/lượt</b> (~1.343 token vào / 131 token ra).
           </div>
         </div>
       </div>
@@ -730,25 +878,30 @@
         <div class="card green">
           <div class="card-title">1. Giải đúng Pain thật</div>
           <div class="stat-big" style="color: var(--green);">87% / 50%</div>
-          <div class="stat-label">87% người khảo sát từng gặp sự cố; 50% bỏ qua khiếu nại vì rườm rà; 33.3% review App Store phàn nàn giao nhận/CSKH.</div>
+          <div class="stat-label">87% người khảo sát từng gặp sự cố; 50% bỏ qua khiếu nại vì rườm rà; 33.3% review App
+            Store phàn nàn giao nhận/CSKH.</div>
         </div>
         <div class="card blue">
           <div class="card-title">2. An toàn &amp; Chính xác</div>
           <div class="stat-big" style="color: var(--navy);">24 / 24 (100%)</div>
-          <div class="stat-label">Đạt 100% ở Lượt 2 trên cả câu thường, ca biên và 4/4 ca tấn công; 100% chỉ tạo bản nháp chờ duyệt.</div>
+          <div class="stat-label">Đạt 100% ở Lượt 2 trên cả câu thường, ca biên và 4/4 ca tấn công; 100% chỉ tạo bản
+            nháp chờ duyệt.</div>
         </div>
         <div class="card amber">
           <div class="card-title">3. Chi phí cực thấp</div>
           <div class="stat-big" style="color: var(--amber);">11 ₫ / task</div>
-          <div class="stat-label">Tổng chi phí vận hành 1.000 người dùng chỉ ~<b>20.210 ₫/tháng</b> với <code>gpt-4o-mini</code> (0/50 phiên lỗi).</div>
+          <div class="stat-label">Tổng chi phí vận hành 1.000 người dùng chỉ ~<b>20.210 ₫/tháng</b> với
+            <code>gpt-4o-mini</code> (0/50 phiên lỗi).</div>
         </div>
       </div>
 
       <div class="card">
         <div class="card-title">Ranh giới an toàn khi đưa vào dùng thật</div>
         <ul class="clean">
-          <li>AI <b>không bao giờ</b> tự chuyển tiền hoàn hoặc phát hành voucher thật — toàn bộ dừng ở bản nháp chờ CSKH bấm duyệt.</li>
-          <li>Các ca nhạy cảm (dị vật/ngộ độc, &gt;100.000đ, khiếu nại &gt;3 lần/tháng, dọa 1★) bị khóa cứng bằng Python để chuyển người xử lý.</li>
+          <li>AI <b>không bao giờ</b> tự chuyển tiền hoàn hoặc phát hành voucher thật — toàn bộ dừng ở bản nháp chờ CSKH
+            bấm duyệt.</li>
+          <li>Các ca nhạy cảm (dị vật/ngộ độc, &gt;100.000đ, khiếu nại &gt;3 lần/tháng, dọa 1★) bị khóa cứng bằng Python
+            để chuyển người xử lý.</li>
         </ul>
       </div>
     </section>
@@ -765,21 +918,25 @@
         <div class="card blue">
           <div class="card-title">1. Intent Router thông minh hơn</div>
           <ul class="clean">
-            <li>Hiện guardrail dùng khớp từ khóa chuẩn hóa (<code>_norm</code>), có thể sót câu viết tắt nặng hoặc tiếng lóng mới.</li>
+            <li>Hiện guardrail dùng khớp từ khóa chuẩn hóa (<code>_norm</code>), có thể sót câu viết tắt nặng hoặc tiếng
+              lóng mới.</li>
             <li>Bổ sung phân loại ý định bằng embedding + structured output trước khi vào bộ kiểm tra ngưỡng cứng.</li>
           </ul>
         </div>
         <div class="card amber">
           <div class="card-title">2. Mở rộng kiểm thử &amp; User thật</div>
           <ul class="clean">
-            <li>Mở rộng <code>benchmark.csv</code> lên <b>50+ biến thể</b> câu tấn công, viết tắt và nhiều món cùng lúc.</li>
-            <li>Chạy thử nghiệm với ≥5 người dùng thật trên bản Web (<code>validation/log.md</code>) để đo mức độ hài lòng thực tế.</li>
+            <li>Mở rộng <code>benchmark.csv</code> lên <b>50+ biến thể</b> câu tấn công, viết tắt và nhiều món cùng lúc.
+            </li>
+            <li>Chạy thử nghiệm với ≥5 người dùng thật trên bản Web (<code>validation/log.md</code>) để đo mức độ hài
+              lòng thực tế.</li>
           </ul>
         </div>
         <div class="card green">
           <div class="card-title">3. Màn hình duyệt 1-Click cho CSKH</div>
           <ul class="clean">
-            <li>Thêm giao diện hàng đợi bản nháp (<code>draft_ready</code> / <code>escalated</code>) để nhân viên CSKH xem ảnh bằng chứng và bấm <b>Duyệt / Từ chối</b> trong 1 chạm.</li>
+            <li>Thêm giao diện hàng đợi bản nháp (<code>draft_ready</code> / <code>escalated</code>) để nhân viên CSKH
+              xem ảnh bằng chứng và bấm <b>Duyệt / Từ chối</b> trong 1 chạm.</li>
             <li>Tích hợp Vision API kiểm tra sơ bộ ảnh chụp món ăn khách gửi lên.</li>
           </ul>
         </div>
@@ -787,14 +944,18 @@
 
       <div class="slice-banner" style="margin-top: 18px;">
         <span class="slice-label">Cảm ơn Ban Giám Khảo!</span>
-        <span style="font-size: 14px; font-weight: 600; color: var(--navy);">Nhóm NPCs · Phòng C401 · Zone 7 · Sẵn sàng Demo Live &amp; Hỏi Đáp</span>
+        <span style="font-size: 14px; font-weight: 600; color: var(--navy);">Nhóm NPCs · Phòng C401 · Zone 7 · Sẵn sàng
+          Demo Live &amp; Hỏi Đáp</span>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
-      <div class="shortcuts">Phím tắt: <code>←</code> / <code>→</code> hoặc <code>Space</code> chuyển slide · <code>F</code> toàn màn hình · <code>Cmd+P</code> xuất PDF</div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="shortcuts">Phím tắt: <code>←</code> / <code>→</code> hoặc <code>Space</code> chuyển slide ·
+        <code>F</code> toàn màn hình · <code>Ctrl+P</code> / <code>Cmd+P</code> xuất PDF</div>
       <div class="nav-controls">
         <button class="btn" id="prevBtn">← Trước</button>
         <span class="counter" id="counter">1 / 9</span>
@@ -838,4 +999,5 @@
     show(0);
   </script>
 </body>
+
 </html>
