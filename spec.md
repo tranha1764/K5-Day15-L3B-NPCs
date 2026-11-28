@@ -133,6 +133,9 @@ flowchart LR
 | 28/11 01:42 | Cải tiến `AI-02` sau Lượt 1 (`20/24` → `24/24`) và chạy mô phỏng chi phí 50 phiên | Lượt 1 trượt 4 câu (`D17`, `D20`, `D22`, `D23`); bổ sung chặn prompt injection, data exfiltration, kênh hoàn tiền và thẩm mỹ trong `codebase/agent.py` (`eval/report.md`, `cost/simulate-1.csv`) |
 | 28/11 02:50 | Sửa render link Markdown `[nhãn](url)` ở Web UI (`MessageBubble.tsx`), đồng bộ số tỷ lệ bỏ cuộc `50.0%` và trạng thái thật/giả | URL `source_url` quá dài bị hiển thị thô dưới dạng `%C3%A0...` trên UI; đồng bộ số liệu với khảo sát `n=23` (`frontend/`, `cost/cost-estimate.md`, `README.md`, `docs/ai-usage.md`, `spec.md`) |
 | 28/11 08:52 | Bổ sung kết quả người thứ hai chấm thử 5 output (`eval/README.md`) và gắn link video demo thật (`README.md`) | Hoàn thiện tiêu chí R4 (khớp 5/5 trên `D01, D05, D17, D20, D22`) và link video CP3 (`https://youtu.be/3YU7NfJOEW0`) |
+| 28/11 09:47 | Giữ ngữ cảnh hội thoại Web UI khi trạng thái là `need_info`, bổ sung từ khóa giao trễ và cấu hình deploy `render.yaml` | Hỗ trợ khách bổ sung ảnh/mã đơn nhiều lượt và chuẩn bị link demo live (`codebase/agent.py`, `codebase/app.py`, `frontend/`, `render.yaml` — PR #8) |
+| 28/11 10:36 | Thêm bộ slide thuyết trình HTML 9 trang (`slides/demo-slides.html`) | Chuẩn bị bộ slide trình bày CP4 bám sát số liệu repo (PR #9) |
+| 28/11 11:50 | Sửa font `h1` trong `slides/demo-slides.html` (bỏ `Georgia` gây vỡ dấu tiếng Việt), bổ sung lý do chọn kiến trúc & link video dự phòng trên slide, điền phân công nói `slides/outline.md` và cập nhật `data/DATA_CARD.md` lên 24 câu | Đảm bảo xuất PDF không lỗi dấu tiếng Việt và đồng bộ đầy đủ tài liệu `.md` trước giờ chốt CP4 |
 
 **Sau CP4 (đến 23:59 Thứ Bảy 28/11)** (sửa theo góp ý — không sửa chuẩn "đạt", câu thử, số bằng chứng, kết quả các lượt đã chạy)
 

@@ -16,7 +16,7 @@ Tham khảo từ **Trung tâm Trợ giúp ShopeeFood** (kiểm tra ngày **27/11
 - **Lịch sử khiếu nại người dùng:** Dữ liệu giả lập có kiểm soát (tạo mẫu khách bình thường 0–1 lần/tháng và khách khiếu nại nhiều lần trong tháng).
 
 ## 3. Bộ câu thử (`eval/benchmark.csv`)
-- Gồm 14 tình huống khiếu nại: 2 câu lấy nguyên văn từ khảo sát (S03, S06), 3 câu dựa trên chính sách công khai ShopeeFood, còn lại nhóm tự viết theo các ca biên của đề bài D1 (đơn thiếu 1 món trong đơn 500k, trễ 29 phút sát ngưỡng 30 phút, tin nhắn cụt, đòi món ngoài đơn, dọa 1★, nghi dị vật/ngộ độc).
+- Gồm **24 tình huống khiếu nại** (`thuong 8 · kho 12 · tu_choi 4`): **5 câu** lấy từ phản hồi người dùng thật trong khảo sát (`S03, S06, S12, S14, S21`), **5 câu** từ chính sách công khai ShopeeFood (`76251, 71069, 71298`), **12 câu** nhóm tự viết theo ca biên/tấn công (đơn 500k thiếu món 120k, trễ 29 phút, tin nhắn cụt, đòi món ngoài đơn, dọa 1★, dị vật/ngộ độc, prompt injection, đòi lộ dữ liệu) và **2 câu** sinh theo seed — tổng **10/24 (41.7%)** từ người dùng / data thật.
 
 ## 4. Quyền riêng tư & An toàn dữ liệu
 - Toàn bộ `user_id`, `order_id`, tên người dùng đều được ẩn danh/giả lập, không chứa SĐT, địa chỉ thật hay dữ liệu cá nhân.
