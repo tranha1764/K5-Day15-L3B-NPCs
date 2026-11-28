@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: npcs-d1-food-complaint
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: APP_HOST=0.0.0.0 APP_NO_BROWSER=1 python3 run.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: MODEL_PROVIDER
+        value: openai
+      - key: MODEL_NAME
+        value: gpt-4o-mini
+      - key: API_KEY
+        sync: false

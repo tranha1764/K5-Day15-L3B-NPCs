@@ -112,7 +112,13 @@ LATE_TERMS = (
     "giao tre",
     "tre",
     "muon",
+    "giao lau",
     "lau qua",
+    "lau roi",
+    "cho lau",
+    "doi lau",
+    "giao cham",
+    "cham qua",
     "chua giao",
     "delay",
 )
